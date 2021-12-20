@@ -10,30 +10,23 @@
 
     <!--Stylesheet CSS-->
     <link rel="stylesheet" href="CSS/stylesheet.css"/>
+
     
     <title>Hello, world!</title>
   </head>
   <body>
-    <button type="button" class="btn add_task">Add Task</button>
 
     <!--Dashboard-->
-    <header>
+    <header class=" w-60 mx-auto">
         <!--Date here-->
         <div class="container">
-
             <div class="row">
                 <div class="col">
-                    <!--Date here-->
+                    <p>Welcome!</p>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col">
-                    <p>Good Morning!</p>
-                </div>
-            </div>
-
-            <div class="row">
+            <div class="row mx-auto">
                 <div class="col">
                     <h1>Dashboard</h1>
                 </div>
@@ -51,33 +44,86 @@
         
     </header>
 
-    <!--Model-->
-    <div class="modal" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Task name</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <p>Modal body text goes here.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Submit</button>
-              <button type="button" class="btn btn-primary">Reset</button>
-            </div>
+    <main>
+
+        <div class="w-50 mx-auto">
+                    <!-- Task adding button -->
+            <button type="button" class="button btn btn-lg btn-block btn-light" data-toggle="modal" data-target="#taskModal">
+              +
+            </button>
+            <br>
+            <p>~ Press the '+' to add a task ~</p> 
+        </div>
+
+
+
+
+        <div class="card mx-auto" style="width: 18rem;">
+          <input type="checkbox" class="taskStatus"></input>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
           </div>
         </div>
-      </div>
-      
+
+
+
+    <!--Modal-->
+        <div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="Task Adding Modal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content mx-auto">
+                <div class="modal-header">
+                  <h5 class="modal-title">Add a Task</h5>
+                  <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close" >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                      <form class="addTask">
+                          <div class="container">
+                            <div class="form-group p-2">
+                                <label for="Name">Name: </label><br>
+                                <input type="textbox" id="Name" placeholder="Enter your name"/>
+                            </div>
+                            <div class="form-group p-2">
+                                <label for="Description">Description: </label> <br>
+                                <textarea id="Description" name="Description" placeholder="Describe your task" rows="5" cols="30"></textarea>
+
+                            </div>      
+                            <div class="form-group p-2">
+                                <label for="Status">Status: </label><br>
+                                <select id="Status" name="Status">
+                                    <option>To-do</option>
+                                    <option>In progress</option>
+                                    <option>Review</option>
+                                    <option>Done</option>
+                                </select>
+                                <br>
+                            </div>
+                            <div class="form-group p-2">
+                                <label for="Date">Date: </label><br>
+                                <input type="date" id="Date"/>
+                            </div>                           
+                          </div>
+                        </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-light" data-dismiss="modal">Reset</button>
+                  <button type="button" class="btn btn-light">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
    
-    <p>+</p>
-    <p>- Click the Plus (+) button to add a task -</p>
-    
+
+    </main>
+
+    <br>
     <!--Footer-->
-    <footer>©️Copyright 2021</footer>
+    <footer class="bottom">
+        <p>©️Copyright 2021</p>
+    </footer>
     <!--<section class="spikes"></section>-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
