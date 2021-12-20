@@ -3,11 +3,14 @@
 	border: 0;
 	color: #202020;
 }
+body {
+	margin: 1rem;
+}
 header {
 	background-color:  #BFCC94;
-	max-width: 75%;
+	max-width: 45rem;
 	max-height: 19rem;
-	box-shadow: 3px 3px #202020;
+	box-shadow: 3px 3px #404040;
 	border-radius: .75rem;
 	margin-top: 2rem;
 	padding-top: 1.5rem;
@@ -17,12 +20,23 @@ p {
 }
 
 .card {
+	text-align: center;
 	padding: 1rem;
 	margin: 1.75rem;
 }
+.menu {
+/*	position: relative;*/
 
+	background-color: white;
+    width: 1.6rem;
+    height: 1.6rem;
+    background-image: radial-gradient(circle, black .2rem, transparent .1rem);
+    background-size: 100% 33.33%;
+    transform: rotate(0deg);
+    transition: transform 350ms ease;
+}
 .btn {
-	box-shadow: 3px 3px #202020;
+	box-shadow: 3px 3px #404040;
 	text-align: center;
 	margin-top: 3rem;
 	margin-bottom: auto;
@@ -45,13 +59,13 @@ p {
 
 }
 .close {
-	box-shadow: 0px;
+	box-shadow: 3px 3px #404040;
 	border: none;
 	color: black;
-	background-color: #202020;
+	background-color: #404040;
 }
 .form-group {
-	box-shadow: 3px 3px #202020;
+	box-shadow: 3px 3px #404040;
 	background-color:  white;
 	text-align: center;
 	margin-left: 0.2rem;
@@ -61,6 +75,9 @@ p {
 	max-height: 30%;
 	border-radius: .75rem;
 }
+select {
+	background-color: white;
+}
 
 
 
@@ -68,4 +85,9 @@ p {
 footer {
 	text-align: center;
 	padding: 2rem;
+}
+
+
+.menu:hover {
+	transform: rotate(90deg);
 }
