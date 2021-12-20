@@ -1,0 +1,44 @@
+/*Button*/
+.add_task {
+    background-color: #F0F4EF;
+}
+
+/*Background colour*/
+body {
+    background-color: #F0F4EF;
+}
+
+/*Background
+.spikes {
+    position: relative;
+    background: #F0F4EF;
+    height: 50vh;
+  }
+  
+  .spikes::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: -0%;
+    top: 100%;
+    z-index: 10;
+    display: block;
+    height: 50px;
+    background-size: 50px 100%;
+    background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
+    background-position: 0 0;
+  }*/
+
+  /*Images*/
+
+.Sun {
+    justify-content: right;
+    right: 50%;
+}
+
+/*Columns*/
+
+form {
+    text-align: center;
+    flex-direction: column;
+}
