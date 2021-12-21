@@ -3,6 +3,7 @@
 	border: 0;
 	color: #202020;
 }
+
 header {
 	background-color:  #BFCC94;
 	max-width: 75%;
@@ -12,10 +13,12 @@ header {
 	margin-top: 2rem;
 	padding-top: 1.5rem;
 }
+
 p {
 	text-align: center;
 }
 
+/*Form*/
 .card {
 	padding: 1rem;
 	margin: 1.75rem;
@@ -38,12 +41,7 @@ p {
 	width: 80%;
 	margin: 15% auto;
 }
-.modal-header {
-/*	background-color: ;*/
-}
-.modal-footer {
 
-}
 .close {
 	box-shadow: 0px;
 	border: none;
@@ -62,10 +60,45 @@ p {
 	border-radius: .75rem;
 }
 
-
-
-
 footer {
 	text-align: center;
 	padding: 2rem;
+}
+
+/*Card Layout*/
+
+.card-div {
+	max-width: 90%;
+	margin: auto;
+	padding: 1rem;
+}
+
+.layout {
+	background-color: #F87575;
+	border-radius: 10px;
+}
+
+.card-text {
+	text-align: left;
+	border: 1px solid #202020;
+	border-radius: 10px;
+	padding: 1rem;
+	background-color: #F0F4EF;
+}
+
+.card-header {
+	border: 1px solid #202020;
+	border-radius: 20px;
+	background-color: #F0F4EF;
+}
+strong {
+	font-size: 1.20rem;
+}
+
+small {
+	font-size: 1rem;
+}
+
+.area {
+	margin: 0.5rem;
 }
