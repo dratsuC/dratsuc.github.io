@@ -15,25 +15,51 @@ header {
 	margin-top: 2rem;
 	padding-top: 1.5rem;
 }
+h1 {
+/*	position: relative;
+	margin-top: 100px;
+	right: 25%;
+	float: left;*/
+}
+
+h5 {
+	font-size: 2rem;
+}
+
 p {
 	text-align: center;
 }
-
+.checkbox {
+	transition: box-shadow .6s;
+}
 .card {
-	text-align: center;
+	background-color: #F87575;
+	box-shadow: 3px 3px #404040;
+	min-width: 40%;
+	max-width: 80%;
+	display: inline-block;
 	padding: 1rem;
 	margin: 1.75rem;
+	border: 1px solid #404040;
 }
 .menu {
 /*	position: relative;*/
-
-	background-color: white;
+	margin: -1.6rem;
     width: 1.6rem;
     height: 1.6rem;
     background-image: radial-gradient(circle, black .2rem, transparent .1rem);
     background-size: 100% 33.33%;
     transform: rotate(0deg);
     transition: transform 350ms ease;
+}
+.card-btn {
+	background-color: #F87575;
+}
+.delete {
+	margin-right: -1.2rem;
+	float: right;
+	border-radius: .75rem;
+	transition: font-size .3s;
 }
 .btn {
 	box-shadow: 3px 3px #404040;
@@ -54,15 +80,15 @@ p {
 }
 .modal-header {
 /*	background-color: ;*/
+	align-items: end;
 }
 .modal-footer {
 
 }
 .close {
+	margin: .2rem;
+	border-radius: .75rem;
 	box-shadow: 3px 3px #404040;
-	border: none;
-	color: black;
-	background-color: #404040;
 }
 .form-group {
 	box-shadow: 3px 3px #404040;
@@ -88,6 +114,30 @@ footer {
 }
 
 
+/*@media screen and (max-width: 992px) {
+  .column {
+    width: 50%;
+  }
+}
+
+ On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other 
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}*/
+
+
+.checkbox:checked {
+    border: 1px solid #41B883;
+    background-color: #34495E;
+}
+.checkbox:hover {
+	box-shadow: 1px 1px #404040;
+}
 .menu:hover {
 	transform: rotate(90deg);
+}
+.delete:hover {
+	font-size: 150%;
 }
