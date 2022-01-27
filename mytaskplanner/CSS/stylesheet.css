@@ -28,6 +28,8 @@ header {
 	margin: .6rem;
 }
 #date {
+	display: flex;
+	text-align: center;
 	padding: .6rem;
 }
 h1 {
@@ -152,3 +154,4 @@ footer {
 .task-add:hover {
 	box-shadow: 6px 6px #606060;
 }
+

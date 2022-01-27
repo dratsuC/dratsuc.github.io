@@ -21,7 +21,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <p id="date" ></p>
+                    <span id="date" ></span>
                     <p><strong>Welcome!</strong></p>
                 </div>
             </div>
@@ -66,47 +66,57 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                      <form class="addTask">
+                      <form class="addTask needs-validation">
                           <div class="container">
                             <div class="form-group p-2">
                                 <label for="Name">Task Name: </label><br>
                                 <input type="textbox" id="addName" placeholder="Name of task"/>
                                 <!-- validation feedback -->
                                 <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback"></div>
+                                <div class="invalid-feedback">Please enter a valid task name.</div>
 
                             </div>
                             <div class="form-group p-2">
                                 <label for="Description">Description: </label> <br>
-                                <textarea id="Description" name="addDescription" placeholder="Describe your task" rows="5" cols="20"></textarea>
+                                <textarea id="addDescription" name="Description" placeholder="Describe your task" rows="5" cols="20"></textarea>
                                 <!-- validation feedback -->
                                 <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback"></div>
+                                <div class="invalid-feedback">Please describe your task (in more than 5 characters)</div>
 
                             </div>  
                             <div class="form-group p-2">
                                 <label for="assignedTo">Assigned To: </label><br>
                                 <input type="textbox" id="addAssignedTo" placeholder="Enter your name"/>
                                 <!-- validation feedback -->
-                                <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback"></div>
+                                <div class="valid-feedback">What a lovely name!</div>
+                                <div class="invalid-feedback">Please enter the task asignee's name.</div>
 
                             </div>    
                             <div class="form-group p-2">
                                 <label for="Status">Status: </label><br>
                                 <select id="addStatus" name="Status">
+                                    <option></option>
                                     <option>To-do</option>
                                     <option>In progress</option>
                                     <option>Review</option>
                                     <option>Done</option>
                                 </select>
                                 <br>
+                                <!-- validation feedback -->
+                                <div class="valid-feedback">Good choice!</div>
+                                <div class="invalid-feedback">Please pick a task status.</div>                                
                             </div>
+
                             <div class="form-group p-2">
                                 <label for="Date">Date: </label><br>
                                 <input type="date" id="addDate" name="date">
-                            </div>                           
+                                <!-- validation feedback -->
+                                <div class="valid-feedback">Nice date!</div>
+                                <div class="invalid-feedback">Please enter a valid date.</div>                                  
+                            </div>  
+
                           </div>
+                        
                         </form>
                 </div>
                 <div class="modal-footer">
@@ -204,91 +214,11 @@
                 Due Date: NOW<br>
                 Status: DO IT<br>                
             </p>
-            <a href="#" class="btn btn-light area">Submit</a>
-            <a href="#" class="btn btn-light area">Delete</a>
+            <a href="#" class="btn btn-light area taskDelete">Delete</a>
             <a href="#" class="btn btn-light area"data-toggle="modal" data-target="#editModal">Edit</a>
             </div>
         </div>
-        <div class="card layout">
-            <div class="card-header rounded">
-                <input type="checkbox" value="yes" class="checkbox">
-                <label for="yes">
-            <h5>Task Name: <small>Put out the BINS</small></h5> 
-            </div>
-            <div class="card-body">
-            <h5 class="card-title">
-                <strong>Description: </strong> <small>You must put the bins out, because if you don't we will have very stinky yucky gross ew gross yucky smelly bins >:(</small>
-            </h5>
-            <p class="card-text">
-                Assigned to: YOU<br>
-                Due Date: NOW<br>
-                Status: DO IT<br>                
-            </p>
-            <a href="#" class="btn btn-light area">Submit</a>
-            <a href="#" class="btn btn-light area">Delete</a>
-            <a href="#" class="btn btn-light area"data-toggle="modal" data-target="#editModal">Edit</a>
-            </div>
-        </div>
-        <div class="card layout">
-            <div class="card-header rounded">
-                <input type="checkbox" value="yes" class="checkbox">
-                <label for="yes">
-            <h5>Task Name: <small>Put out the BINS</small></h5> 
-            </div>
-            <div class="card-body">
-            <h5 class="card-title">
-                <strong>Description: </strong> <small>You must put the bins out, because if you don't we will have very stinky yucky gross ew gross yucky smelly bins >:(</small>
-            </h5>
-            <p class="card-text">
-                Assigned to: YOU<br>
-                Due Date: NOW<br>
-                Status: DO IT<br>                
-            </p>
-            <a href="#" class="btn btn-light area">Submit</a>
-            <a href="#" class="btn btn-light area">Delete</a>
-            <a href="#" class="btn btn-light area"data-toggle="modal" data-target="#editModal">Edit</a>
-            </div>
-        </div>        
-        <div class="card layout">
-            <div class="card-header rounded">
-                <input type="checkbox" value="yes" class="checkbox">
-                <label for="yes">
-            <h5>Task Name: <small>Put out the BINS</small></h5> 
-            </div>
-            <div class="card-body">
-            <h5 class="card-title">
-                <strong>Description: </strong> <small>You must put the bins out, because if you don't we will have very stinky yucky gross ew gross yucky smelly bins >:(</small>
-            </h5>
-            <p class="card-text">
-                Assigned to: YOU<br>
-                Due Date: NOW<br>
-                Status: DO IT<br>                
-            </p>
-            <a href="#" class="btn btn-light area">Submit</a>
-            <a href="#" class="btn btn-light area">Delete</a>
-            <a href="#" class="btn btn-light area"data-toggle="modal" data-target="#editModal">Edit</a>
-            </div>
-        </div>
-        <div class="card layout">
-            <div class="card-header rounded">
-                <input type="checkbox" value="yes" class="checkbox">
-                <label for="yes">
-            <h5>Task Name: <small>Put out the BINS</small></h5> 
-            </div>
-            <div class="card-body">
-            <h5 class="card-title">
-                <strong>Description: </strong> <small>You must put the bins out, because if you don't we will have very stinky yucky gross ew gross yucky smelly bins >:(</small>
-            </h5>
-            <p class="card-text">
-                Assigned to: YOU<br>
-                Due Date: NOW<br>
-                Status: DO IT<br>                
-            </p>
-            <a href="#" class="btn btn-light area">Submit</a>
-            <a href="#" class="btn btn-light area">Delete</a>
-            <a href="#" class="btn btn-light area"data-toggle="modal" data-target="#editModal">Edit</a>
-            </div>
-        </div>
+        
     </div>
 
     </main>
@@ -302,7 +232,7 @@
     <script src='./JS/taskManager.js' type='text/javascript'></script>
     <script src='./JS/index.js' type='text/javascript'></script>
     <noscript>Sorry, your browser does not support JavaScript!</noscript>
-    
+
     <!-- linking other JS files -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
