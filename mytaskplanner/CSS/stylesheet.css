@@ -9,11 +9,29 @@ body {
 header {
 	background-color:  #BFCC94;
 	max-width: 75%;
-	max-height: 19rem;
+	/*max-height: 19rem;*/
 	box-shadow: 3px 3px #404040;
 	border-radius: .75rem;
-	margin-top: 2rem;
+/*	margin-top: 2rem;
+	padding-left: 4rem;
 	padding-top: 1.5rem;
+	padding-bottom: 5rem;*/
+}
+.dashTitle {
+	padding-top: 2rem;
+	padding-right: 1rem;
+}
+.dashLogo {
+	text-align: right;
+}
+#titleDiv {
+	margin: .6rem;
+}
+#date {
+	padding: .6rem;
+}
+h1 {
+	font-size: 3.5rem;
 }
 p {
 	text-align: center;

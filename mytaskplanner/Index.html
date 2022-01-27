@@ -18,26 +18,24 @@
 
     <!--Dashboard-->
     <header class=" w-60 mx-auto">
-        <!--Date here-->
         <div class="container">
             <div class="row">
-                <divclass="col">
-                    <p id="dateDiv" ></p>
-                    <p>Welcome!</p>
+                <div class="col">
+                    <p id="date" ></p>
+                    <p><strong>Welcome!</strong></p>
                 </div>
             </div>
 
-            <div class="row mx-auto">
-                <div class="col">
+            <div id="titleDiv" class="row mx-auto" >
+                <div class="col dashTitle">
                     <h1>Dashboard</h1>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col">
+                <div class="col dashLogo">
                     <img class="Sun" src="Images/sun.png" alt="Sun"/>
                 </div>
             </div>
+
+
         </div>
         
         
@@ -126,7 +124,7 @@
                             </div>      
                             <div class="form-group p-2">
                                 <label for="Status">Status: </label><br>
-                                <select id="Status" name="Status">
+                                <select required id="Status" name="Status">
                                     <option>To-do</option>
                                     <option>In progress</option>
                                     <option>Review</option>
@@ -136,7 +134,7 @@
                             </div>
                             <div class="form-group p-2">
                                 <label for="Date">Date: </label><br>
-                                <input type="date" id="Date" name="date">
+                                <input required type="date" id="Date" name="date">
                             </div>                           
                           </div>
                         </form>
