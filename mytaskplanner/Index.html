@@ -70,31 +70,31 @@
                           <div class="container">
                             <div class="form-group p-2">
                                 <label for="Name">Task Name: </label><br>
-                                <input type="textbox" id="addName" placeholder="Name of task"/>
-                                <!-- validation feedback -->
+                                <input required type="textbox" id="addName" class="form-control" placeholder="Name of task"/>
+                                <!-- name validation feedback -->
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback">Please enter a valid task name.</div>
 
                             </div>
                             <div class="form-group p-2">
                                 <label for="Description">Description: </label> <br>
-                                <textarea id="addDescription" name="Description" placeholder="Describe your task" rows="5" cols="20"></textarea>
-                                <!-- validation feedback -->
+                                <textarea required id="addDescription" class="form-control" name="Description" placeholder="Describe your task" rows="5" cols="20"></textarea>
+                                <!-- description validation feedback -->
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback">Please describe your task (in more than 5 characters)</div>
 
                             </div>  
                             <div class="form-group p-2">
                                 <label for="assignedTo">Assigned To: </label><br>
-                                <input type="textbox" id="addAssignedTo" placeholder="Enter your name"/>
-                                <!-- validation feedback -->
+                                <input required type="textbox" id="addAssignedTo" class="form-control" placeholder="Enter your name"/>
+                                <!-- assigned to validation feedback -->
                                 <div class="valid-feedback">What a lovely name!</div>
                                 <div class="invalid-feedback">Please enter the task asignee's name.</div>
 
                             </div>    
                             <div class="form-group p-2">
                                 <label for="Status">Status: </label><br>
-                                <select id="addStatus" name="Status">
+                                <select required id="addStatus" class="form-control" name="Status">
                                     <option></option>
                                     <option>To-do</option>
                                     <option>In progress</option>
@@ -102,15 +102,15 @@
                                     <option>Done</option>
                                 </select>
                                 <br>
-                                <!-- validation feedback -->
+                                <!-- status validation feedback -->
                                 <div class="valid-feedback">Good choice!</div>
                                 <div class="invalid-feedback">Please pick a task status.</div>                                
                             </div>
 
                             <div class="form-group p-2">
                                 <label for="Date">Date: </label><br>
-                                <input type="date" id="addDate" name="date">
-                                <!-- validation feedback -->
+                                <input required type="date" id="addDate" class="form-control" name="date">
+                                <!-- date validation feedback -->
                                 <div class="valid-feedback">Nice date!</div>
                                 <div class="invalid-feedback">Please enter a valid date.</div>                                  
                             </div>  
@@ -147,43 +147,47 @@
                                 <br>
                                 <input  required type="text" class="form-control" id="editName"
                                 placeholder="Describe your task"/>
-                                <!-- validation feedback -->
+                                <!-- name validation feedback -->
                                 <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback"></div>
+                                <div class="invalid-feedback">Please enter a valid task name.</div>
                             </div>
                             <div class="form-group p-2">
                                 <label for="Description">Description: </label> <br>
                                 <textarea required class="form-control" id="editDescription" name="Description" placeholder="Describe your task" rows="5" cols="20"></textarea>
-                                <!-- validation feedback -->
+                                <!-- description validation feedback -->
                                 <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback"></div>
+                                <div class="invalid-feedback">Please describe your task (in more than 5 characters)</div>
                             </div>  
                             <div class="form-group p-2">
                                 <label for="assignedTo">Assigned To: </label><br>
                                 <input type="textbox" id="editAssignedTo" placeholder="Enter your name"/>
-                                <!-- validation feedback -->
-                                <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback"></div>
+                                <!-- assigned to validation feedback -->
+                                <div class="valid-feedback">What a lovely name!</div>
+                                <div class="invalid-feedback">Please enter the task asignee's name.</div>
 
                             </div>    
                             <div class="form-group p-2">
                                 <label for="Status">Status: </label><br>
-                                <select required id="editStatus" name="Status">
+                                <select required id="editStatus" class="form-control" name="Status">
+                                    <option></option>                                    
                                     <option>To-do</option>
                                     <option>In progress</option>
                                     <option>Review</option>
                                     <option>Done</option>
                                 </select>
-                                <!-- validation feedback -->
-                                <div class="invalid-feedback"></div>
+                                <!-- status validation feedback -->
+                                <div class="valid-feedback">Good choice!</div>
+                                <div class="invalid-feedback">Please pick a task status.</div>    
                                 <br>
                             </div>
                             <div class="form-group p-2">
                                 <label for="Date">Date: </label><br>
                                 <input required type="date" id="editDate" name="date">
+                                <!-- date validation feedback -->
+                                <div class="valid-feedback">Nice date!</div>
+                                <div class="invalid-feedback">Please enter a valid date.</div>                                 
                             </div>    
-                            <!-- validation feedback -->
-                            <div class="invalid-feedback"></div>                       
+                     
                           </div>
                         </form>
                 </div>

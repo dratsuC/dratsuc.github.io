@@ -1,8 +1,5 @@
 'use strict';
 
-
-
-
 /* -----------------------------
 // 	DATE DISPLAY FUNCTION	//
 ----------------------------- */ 
@@ -13,13 +10,9 @@ let plainDate = [];
 let compareDate;
 plainDate = new Date()
 
-
 let d = new Date().toLocaleDateString('en-us', { 
 	weekday:"long", year:"numeric", month:"short", day:"numeric"});
 let getDate = () => {
-
-
-
 	d = `Today is ${d}.`
 	try {
 		let displayEl = document.querySelector("#date");
@@ -28,14 +21,11 @@ let getDate = () => {
 		console.log('Uh oh, something went oopsie!')
 		console.log(error)
 	}
-
-
 }
 
 
 //calling date function
 getDate();
-
 
 
 /* ------------------------------/
@@ -44,6 +34,7 @@ getDate();
 
 // counter for checking if any invalid inputs were given
 let invalidCounter = 0;
+let editInvalidCounter = 0;
 
 // submit buttons for each form
 let addButton = document.querySelector('#addSubmit');
@@ -53,22 +44,12 @@ let editButton = document.querySelector('#editSubmit');
 let addTaskForm = document.querySelector('#addTask');
 let editTaskForm = document.querySelector('#editTask');
 
-/*
-name (at least 5 characters),
-description (at least 5 characters),
-status (must be chosen),
-date (must be the current date or later)
-*/
-
 // grabbing add task inputs 
 const addName = document.querySelector('#addName');
 const addDescription = document.querySelector('#addDescription');
 const addAssignedTo = document.querySelector('#addAssignedTo')
 const addStatus = document.querySelector('#addStatus');
-
 const addDate = document.querySelector('#addDate');
-// let addDateArray = addDate.value.split('-');
-// console.log(addDateArray)
 /////////////////////////////////////////////	
 
 // grabbing edit task inputs
@@ -76,9 +57,7 @@ const editName = document.querySelector('#editName');
 const editDescription = document.querySelector('#editDescription');
 const editAssignedTo = document.querySelector('#editAssignedTo')
 const editStatus = document.querySelector('#editStatus');
-
 const editDate = document.querySelector('#editDate');
-// let editDateArray = editDate.value.split('-');
 /////////////////////////////////////////////
 
 // let validator = () => {
@@ -176,7 +155,89 @@ addButton.addEventListener('click', () => {
 	}
 })
 
+/////////////////////////////////////////////
+// VALIDATION FOR 'EDIT NEW FORM' MODAL WINDOW//
+/////////////////////////////////////////////
 
+editButton.addEventListener('click', () => {
+
+	try {
+
+		if (editName.value.length >= 5) {
+			editName.classList.add('is-valid');
+			editName.classList.remove('is-invalid');
+		} else {
+			editName.classList.remove('is-valid');
+			editName.classList.add('is-invalid');
+			editInvalidCounter++
+		}
+		if (editDescription.value.length >= 5) {
+			editDescription.classList.add('is-valid');
+			editDescription.classList.remove('is-invalid');
+		} else {
+			editDescription.classList.remove('is-valid');
+			editDescription.classList.add('is-invalid');
+			editInvalidCounter++
+		}
+		if (editAssignedTo.value.length >= 5) {
+			editAssignedTo.classList.add('is-valid');
+			editAssignedTo.classList.remove('is-invalid');
+		} else {
+			editAssignedTo.classList.remove('is-valid');
+			editAssignedTo.classList.add('is-invalid');
+			editInvalidCounter++
+		}
+		if (editStatus.value) {
+			editStatus.classList.add('is-valid');
+			editStatus.classList.remove('is-invalid');
+		} else {
+			editStatus.classList.remove('is-valid');
+			editStatus.classList.add('is-invalid');
+			editInvalidCounter++
+		}
+
+		// DATE LOGIC
+		let dateCounter = 0;
+		let editDateArray = editDate.value.split('-');
+
+		if (editDateArray[0] >= plainDate.getFullYear()){
+			if (editDateArray[1] >= plainDate.getMonth() + 1) {
+				if (editDateArray[2] >= plainDate.getDate()) {
+					dateCounter = 0;
+				} 
+			} 
+		} else {
+			dateCounter++
+		}
+
+			//if the counter is empty, the user 
+			// inputted a good date		
+		if (!dateCounter) {
+			editDate.classList.add('is-valid');
+			editDate.classList.remove('is-invalid');
+		} else {
+			editDate.classList.remove('is-valid');
+			editDate.classList.add('is-invalid');
+			editInvalidCounter++
+		}
+		//end of date logic
+
+
+		// evaluate invalidCounter to check for 
+		// invalid inputs
+		if (editInvalidCounter > 0) {
+			editButton.preventDefault;
+		} else {
+
+			// pass on to function which handles
+			// actual form submission/task creation
+		}
+
+	} catch(error) {
+		console.log('Something went wrong. Please read.')
+		console.log(error)
+	}
+})
 
 
 
