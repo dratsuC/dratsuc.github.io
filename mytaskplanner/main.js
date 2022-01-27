@@ -1,5 +1,7 @@
 'use strict';
 
+// import default from './JS/date.js';
+
 let getDate = () => {
 
 	let d = new Date();
@@ -11,4 +13,4 @@ let getDate = () => {
 
 
 
-export default getDate;
+getDate();
