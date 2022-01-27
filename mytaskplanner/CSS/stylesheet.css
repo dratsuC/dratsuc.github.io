@@ -79,6 +79,9 @@ footer {
 /*	background-color: ;*/
 	align-items: center;
 }
+/*.modal-footer {
+	padding-top: 0;
+}*/
 .exit {
 	margin: .2rem;
 	border-radius: .5rem;

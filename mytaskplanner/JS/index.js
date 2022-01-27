@@ -44,13 +44,23 @@ date (must be the current date or later)
 */
 
 
-const formName = document.querySelector('#Name');
-const formDesc = document.querySelector('#Description');
-const formStatus = document.querySelector('#Status');
-const formDate = document.querySelector('#Date')
+const addName = document.querySelector('#addName');
+const addDesc = document.querySelector('#Description');
+const addStatus = document.querySelector('#Status');
+const addDate = document.querySelector('#Date')
 
+
+
+if (addName.value.length >= 5) {
+	document.querySelector()
+}
+
+
+
+
+//TEST//
 let validateInput = (input) => {
-	if (formName.value) {
+	if (input.value) {
 		input.classList.add('is-valid');
 	}
 }
@@ -62,9 +72,17 @@ let validateInput = (input) => {
 ----------------------------- */ 
 
 
-validateInput(formName)
+validateInput(addName)
 
 
 // let submitForm = () => {
-// 	let submitButton = document.querySelector('#submit-button')
-// 	submitButton.addEventListener('click', }
+// let submitButton = document.querySelector('#submit-button')
+// submitButton.addEventListener('click', document.querySelector('#addTask').submit())
+
+
+let test = new taskManager()
+test.addTask('task', 'do balls', 'jeff', 'now', 'todo')
+console.log(test.tasks)
+
+
+

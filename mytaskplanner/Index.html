@@ -69,8 +69,8 @@
                       <form class="addTask">
                           <div class="container">
                             <div class="form-group p-2">
-                                <label for="Name">Name: </label><br>
-                                <input type="textbox" id="Name" placeholder="Enter your name"/>
+                                <label for="Name">Task Name: </label><br>
+                                <input type="textbox" id="addName" placeholder="Name of task"/>
                                 <!-- validation feedback -->
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback"></div>
@@ -78,15 +78,23 @@
                             </div>
                             <div class="form-group p-2">
                                 <label for="Description">Description: </label> <br>
-                                <textarea id="Description" name="Description" placeholder="Describe your task" rows="5" cols="20"></textarea>
+                                <textarea id="Description" name="addDescription" placeholder="Describe your task" rows="5" cols="20"></textarea>
                                 <!-- validation feedback -->
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback"></div>
 
-                            </div>      
+                            </div>  
+                            <div class="form-group p-2">
+                                <label for="assignedTo">Assigned To: </label><br>
+                                <input type="textbox" id="addAssignedTo" placeholder="Enter your name"/>
+                                <!-- validation feedback -->
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback"></div>
+
+                            </div>    
                             <div class="form-group p-2">
                                 <label for="Status">Status: </label><br>
-                                <select id="Status" name="Status">
+                                <select id="addStatus" name="Status">
                                     <option>To-do</option>
                                     <option>In progress</option>
                                     <option>Review</option>
@@ -96,7 +104,7 @@
                             </div>
                             <div class="form-group p-2">
                                 <label for="Date">Date: </label><br>
-                                <input type="date" id="Date" name="date">
+                                <input type="date" id="addDate" name="date">
                             </div>                           
                           </div>
                         </form>
@@ -125,25 +133,32 @@
                       <form class="addTask needs-validation">
                           <div class="container">
                             <div class="form-group p-2">
-                                <label for="Name">Name: </label>
+                                <label for="Name">Task Name: </label>
                                 <br>
-                                <input  required type="text" class="form-control" id="Name"
-                                placeholder="Enter your name"/>
+                                <input  required type="text" class="form-control" id="editName"
+                                placeholder="Describe your task"/>
                                 <!-- validation feedback -->
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback"></div>
                             </div>
                             <div class="form-group p-2">
                                 <label for="Description">Description: </label> <br>
-                                <textarea required class="form-control" id="Description" name="Description" placeholder="Describe your task" rows="5" cols="20"></textarea>
+                                <textarea required class="form-control" id="editDescription" name="Description" placeholder="Describe your task" rows="5" cols="20"></textarea>
+                                <!-- validation feedback -->
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback"></div>
+                            </div>  
+                            <div class="form-group p-2">
+                                <label for="assignedTo">Assigned To: </label><br>
+                                <input type="textbox" id="editAssignedTo" placeholder="Enter your name"/>
                                 <!-- validation feedback -->
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback"></div>
 
-                            </div>      
+                            </div>    
                             <div class="form-group p-2">
                                 <label for="Status">Status: </label><br>
-                                <select required id="Status" name="Status">
+                                <select required id="editStatus" name="Status">
                                     <option>To-do</option>
                                     <option>In progress</option>
                                     <option>Review</option>
@@ -155,7 +170,7 @@
                             </div>
                             <div class="form-group p-2">
                                 <label for="Date">Date: </label><br>
-                                <input required type="date" id="Date" name="date">
+                                <input required type="date" id="editDate" name="date">
                             </div>    
                             <!-- validation feedback -->
                             <div class="invalid-feedback"></div>                       
@@ -284,7 +299,8 @@
         <p>©️Copyright 2021</p>
     </footer>
     <!-- linking local JS files -->
-    <script src='./main.js' type='text/javascript'></script>
+    <script src='./JS/taskManager.js' type='text/javascript'></script>
+    <script src='./JS/index.js' type='text/javascript'></script>
 
     <!-- linking other JS files -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
