@@ -1,5 +1,10 @@
 'use strict';
 
+// object for storing tasks
+const taskManager = new TaskManager(0);
+
+
+
 /* -----------------------------
 // 	DATE DISPLAY FUNCTION	//
 ----------------------------- */ 
@@ -39,8 +44,7 @@ getDate();
 // 	FORM VALIDATION FUNCTION	//
 /----------------------------- */ 
 
-// object for storing tasks
-let taskObj = new taskManager();
+
 
 
 
@@ -162,19 +166,21 @@ addButton.addEventListener('click', (event) => {
 		if (invalidCounter === 0) {
 			// Pass form inputs to object
 			// addTask method
-			taskObj.addTask(
+			taskManager.addTask(
 				addName.value,
 				addDescription.value,
 				addAssignedTo.value,
 				addStatus.value,
 				addDate.value)
 
-			// TESTING OUTPUT
-			console.log(taskObj.tasks)
+
 
 			// clear inputs ready for next
 			// task creation
-			addTaskForm.reset()			
+			addTaskForm.reset()	
+			taskManager.render()
+
+
 		} else {
 			event.preventDefault();
 		}

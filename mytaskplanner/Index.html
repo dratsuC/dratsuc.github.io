@@ -97,7 +97,7 @@
                             </div>
 
                             <div class="form-group p-2">
-                                <label for="Date">Date: </label><br>
+                                <label for="addDate">Due Date: </label><br>
                                 <input required type="date" id="addDate" class="form-control" name="date">
                                 <!-- date validation feedback -->
                                 <div class="valid-feedback">Nice date!</div>
@@ -121,66 +121,27 @@
    <!--Create card layout that represents a task card-->
 
     <div class="card-div">
+        <ul id='tasksList'>
+            <div class="card layout">
+                <div class="card-header rounded">
 
-        <div class="card layout">
-            <div class="card-header rounded">
-
-            <h5>Task Name: <small>Put out the BINS</small></h5> 
+                <h5>Task Name: <small>Put out the BINS</small></h5> 
+                </div>
+                <div class="card-body">
+                <h5 class="card-title">
+                    <strong>Description: </strong> <small>You must put the bins out, because if you don't we will have very stinky yucky gross ew gross yucky smelly bins >:(</small>
+                </h5>
+                <p class="card-text">
+                    Assigned to: YOU<br>
+                    Due Date: NOW<br>
+                    Status: DO IT<br>                
+                </p>
+                <label for="yes"> 
+                <a href="#" class="btn btn-light area taskComplete">Done</a>
+                <a href="#" class="btn btn-light area taskDelete">Delete</a>
+                </div>
             </div>
-            <div class="card-body">
-            <h5 class="card-title">
-                <strong>Description: </strong> <small>You must put the bins out, because if you don't we will have very stinky yucky gross ew gross yucky smelly bins >:(</small>
-            </h5>
-            <p class="card-text">
-                Assigned to: YOU<br>
-                Due Date: NOW<br>
-                Status: DO IT<br>                
-            </p>
-            <label for="yes">  
-            <input type="checkbox" value="yes" class="checkbox">      
-            <a href="#" class="btn btn-light area taskDelete">Delete</a>
-            </div>
-        </div>
-
-        <div class="card layout">
-          <div class="card-header rounded">
-
-          <h5>Task Name: <small>Put out the BINS</small></h5> 
-          </div>
-          <div class="card-body">
-          <h5 class="card-title">
-              <strong>Description: </strong> <small>You must put the bins out, because if you don't we will have very stinky yucky gross ew gross yucky smelly bins >:(</small>
-          </h5>
-          <p class="card-text">
-              Assigned to: YOU<br>
-              Due Date: NOW<br>
-              Status: DO IT<br>                
-          </p>
-          <label for="yes">  
-          <input type="checkbox" value="yes" class="checkbox">          
-          <a href="#" class="btn btn-light area taskDelete">Delete</a>
-          </div>
-
-      </div>
-      <div class="card layout">
-        <div class="card-header rounded">
-
-        <h5>Task Name: <small>Put out the BINS</small></h5> 
-        </div>
-        <div class="card-body">
-        <h5 class="card-title">
-            <strong>Description: </strong> <small>You must put the bins out, because if you don't we will have very stinky yucky gross ew gross yucky smelly bins >:(</small>
-        </h5>
-        <p class="card-text">
-            Assigned to: YOU<br>
-            Due Date: NOW<br>
-            Status: DO IT<br>                
-        </p>
-        <label for="yes"> 
-        <input type="checkbox" value="yes" class="checkbox">           
-        <a href="#" class="btn btn-light area taskDelete">Delete</a>
-        </div>
-    </div>
+        </ul>
     </div>
 
     </main>
