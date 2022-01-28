@@ -32,6 +32,11 @@ getDate();
 // 	FORM VALIDATION FUNCTION	//
 /----------------------------- */ 
 
+// object for storing tasks
+let taskObj = new taskManager();
+
+
+
 // counter for checking if any invalid inputs were given
 let invalidCounter = 0;
 let editInvalidCounter = 0;
@@ -41,8 +46,8 @@ let addButton = document.querySelector('#addSubmit');
 let editButton = document.querySelector('#editSubmit');
 
 // variable to store each form
-let addTaskForm = document.querySelector('#addTask');
-let editTaskForm = document.querySelector('#editTask');
+let addTaskForm = document.querySelector('.addTask');
+let editTaskForm = document.querySelector('.editTask');
 
 // grabbing add task inputs 
 const addName = document.querySelector('#addName');
@@ -60,17 +65,28 @@ const editStatus = document.querySelector('#editStatus');
 const editDate = document.querySelector('#editDate');
 /////////////////////////////////////////////
 
-// let validator = () => {
-// 	if (addName.value.length >= 5) {
-// 	addName.classList.add('is-valid')
-// 	}
-// }
+/////////////////////////////////////////////
+// FUNCTION FOR CLEARING HTML CLASSES //
+/////////////////////////////////////////////
+let clearForms = () => {
+	addName.value = '';
+	addDescription.value = '';
+	addAssignedTo.value = '';
+	addStatus.value = '';
+	addDate.value = '';
+	editName = '';
+	editDescription = '';
+	editAssignedTo = '';
+	editStatus = '';
+	editDate = '';	
 
-
-let newModal = () => {
-	invalidCounter = 0;
+	// add in classes to initialise
 
 }
+
+
+
+
 
 /////////////////////////////////////////////
 // VALIDATION FOR 'ADD NEW FORM' MODAL WINDOW//
@@ -145,8 +161,20 @@ addButton.addEventListener('click', () => {
 			addButton.preventDefault;
 		} else {
 
-			// pass on to function which handles
-			// actual form submission/task creation
+			// Pass form inputs to object
+			// addTask method
+			taskObj.addTask(
+				addName.value,
+				addDescription.value,
+				addAssignedTo.value,
+				addStatus.value,
+				addDate.value)
+			console.log(taskObj.tasks)
+			console.log(taskObj)
+			// clear inputs ready for next
+			// task creation
+			addTaskForm.reset()
+
 		}
 
 	} catch(error) {
@@ -247,17 +275,11 @@ editButton.addEventListener('click', () => {
 
 // creating new object from taskManager, 
 // which will hold all created tasks
-let taskObj = new taskManager();
 
 
-// function for assigning values from input form
-// into their appropriate places inside HTML cards
-// -- not sure how it works yet lmao
-let taskMapper = () => {
-	document.createElement()
-}
-
-
+  // if uhhhhhhhhhhhhhhhhhhhhhhhh
+  	// if validation was successful
+  	//	taskManager.addTask(addTask)
 
 
 
