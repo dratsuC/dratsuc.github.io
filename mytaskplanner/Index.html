@@ -66,7 +66,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                      <form class="addTask needs-validation">
+                      <form id="addTask" class="needs-validation">
                           <div class="container">
                             <div class="form-group p-2">
                                 <label for="Name">Task Name: </label><br>
@@ -127,77 +127,7 @@
             </div>
           </div>
 
-        <!-- -----------------------------
-        //      EDIT FORM MODAL    //
-        -----------------------------  -->
-        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="Task Adding Modal" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content mx-auto editModal">
-                <div class="modal-header">
-                  <h5 class="modal-title">Edit Task</h5>
-                  <button type="button" class="exit btn btn-sm btn-light" data-dismiss="modal" aria-label="Close" >
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                      <form class="addTask needs-validation">
-                          <div class="container">
-                            <div class="form-group p-2">
-                                <label for="Name">Task Name: </label>
-                                <br>
-                                <input  required type="text" class="form-control" id="editName"
-                                placeholder="Describe your task"/>
-                                <!-- name validation feedback -->
-                                <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback">Please enter a valid task name.</div>
-                            </div>
-                            <div class="form-group p-2">
-                                <label for="Description">Description: </label> <br>
-                                <textarea required class="form-control" id="editDescription" name="Description" placeholder="Describe your task" rows="5" cols="20"></textarea>
-                                <!-- description validation feedback -->
-                                <div class="valid-feedback">Looks good!</div>
-                                <div class="invalid-feedback">Please describe your task (in more than 5 characters)</div>
-                            </div>  
-                            <div class="form-group p-2">
-                                <label for="assignedTo">Assigned To: </label><br>
-                                <input type="textbox" id="editAssignedTo" placeholder="Enter your name"/>
-                                <!-- assigned to validation feedback -->
-                                <div class="valid-feedback">What a lovely name!</div>
-                                <div class="invalid-feedback">Please enter the task asignee's name.</div>
-
-                            </div>    
-                            <div class="form-group p-2">
-                                <label for="Status">Status: </label><br>
-                                <select required id="editStatus" class="form-control" name="Status">
-                                    <option></option>                                    
-                                    <option>To-do</option>
-                                    <option>In progress</option>
-                                    <option>Review</option>
-                                    <option>Done</option>
-                                </select>
-                                <!-- status validation feedback -->
-                                <div class="valid-feedback">Good choice!</div>
-                                <div class="invalid-feedback">Please pick a task status.</div>    
-                                <br>
-                            </div>
-                            <div class="form-group p-2">
-                                <label for="Date">Date: </label><br>
-                                <input required type="date" id="editDate" name="date">
-                                <!-- date validation feedback -->
-                                <div class="valid-feedback">Nice date!</div>
-                                <div class="invalid-feedback">Please enter a valid date.</div>                                 
-                            </div>    
-                     
-                          </div>
-                        </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-light" data-dismiss="modal">Reset</button>
-                  <button id="editSubmit" type="submit" class="btn btn-light">Submit</button>
-                </div>
-              </div>
-            </div>
-          </div>
+ 
           
    <!--Create card layout that represents a task card-->
 
@@ -205,8 +135,7 @@
 
         <div class="card layout">
             <div class="card-header rounded">
-                <input type="checkbox" value="yes" class="checkbox">
-                <label for="yes">
+
             <h5>Task Name: <small>Put out the BINS</small></h5> 
             </div>
             <div class="card-body">
@@ -218,8 +147,9 @@
                 Due Date: NOW<br>
                 Status: DO IT<br>                
             </p>
+            <input type="checkbox" value="yes" class="checkbox">
+            <label for="yes">            
             <a href="#" class="btn btn-light area taskDelete">Delete</a>
-            <a href="#" class="btn btn-light area"data-toggle="modal" data-target="#editModal">Edit</a>
             </div>
         </div>
         
