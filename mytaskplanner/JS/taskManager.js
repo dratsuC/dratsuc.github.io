@@ -5,7 +5,7 @@ let createTaskHtml = (
 	) => {
 
 	const html = `
-	    <div class="card layout">
+	    <li class="card layout">
 	        <div class="card-header rounded">
 
 	        <h5>Task Name: <small>${name}</small></h5> 
@@ -22,7 +22,7 @@ let createTaskHtml = (
 	        <label for="yes">  
 	        <a href="#" class="btn btn-light area taskComplete">Done</a>     
 	        <a href="#" class="btn btn-light area taskDelete">Delete</a>
-	    </div>
+	    </li>
 				`
 	return html;
 }
@@ -44,30 +44,35 @@ class TaskManager {
 			name: name,
 			description,
 			assignedTo,
-			dueDate,
-			status
+			status,
+			dueDate
 		};
 		this.tasks.push(task);
+		console.log(this.tasks)
 
 	}
 	render() {
 		let tasksHtmlList = [];
 		for(let i = 0; i < this.tasks.length; i++) {
-			let currentTask = this.tasks[i];
-			let date = new Date(this.dueDate);
+			let task = this.tasks[i];
+			let date = new Date(task.dueDate);
+
 			let formattedDate = 
 				`${date.getDate()}/${(date.getMonth() + 1)}/${date.getFullYear()}`;
 			let taskHtml = createTaskHtml(
-				this.id,
-				this.name,
-				this.description,
-				this.assignedTo,
-				this.status,
+				task.name,
+				task.description,
+				task.assignedTo,
+				task.status,
 				formattedDate
 				);
+			// console.log(task);
 			tasksHtmlList.push(taskHtml);
+			// console.log(tasksHtmlList);
 		}
 		let tasksHtml = tasksHtmlList.join('\n');
+
+		let tasksList = document.querySelector('#tasksList');
 		tasksList.innerHTML = tasksHtml;
 	}
 

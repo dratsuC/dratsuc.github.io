@@ -59,7 +59,7 @@
                           <div class="container">
                             <div class="form-group p-2">
                                 <label for="Name">Task Name: </label><br>
-                                <input required type="textbox" id="addName" class="form-control" placeholder="Name of task"/>
+                                <input  type="textbox" id="addName" class="form-control" placeholder="Name of task"/>
                                 <!-- name validation feedback -->
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback">Please enter a valid task name.</div>
@@ -67,7 +67,7 @@
                             </div>
                             <div class="form-group p-2">
                                 <label for="Description">Description: </label> <br>
-                                <textarea required id="addDescription" class="form-control" name="Description" placeholder="Describe your task" rows="5" cols="20"></textarea>
+                                <textarea  id="addDescription" class="form-control" name="Description" placeholder="Describe your task" rows="5" cols="20"></textarea>
                                 <!-- description validation feedback -->
                                 <div class="valid-feedback">Looks good!</div>
                                 <div class="invalid-feedback">Please describe your task (in more than 5 characters)</div>
@@ -75,7 +75,7 @@
                             </div>  
                             <div class="form-group p-2">
                                 <label for="assignedTo">Assigned To: </label><br>
-                                <input required type="textbox" id="addAssignedTo" class="form-control" placeholder="Enter your name"/>
+                                <input  type="textbox" id="addAssignedTo" class="form-control" placeholder="Enter your name"/>
                                 <!-- assigned to validation feedback -->
                                 <div class="valid-feedback">What a lovely name!</div>
                                 <div class="invalid-feedback">Please enter the task asignee's name.</div>
@@ -83,7 +83,7 @@
                             </div>    
                             <div class="form-group p-2">
                                 <label for="Status">Status: </label><br>
-                                <select required id="addStatus" class="form-control" name="Status">
+                                <select  id="addStatus" class="form-control" name="Status">
                                     <option></option>
                                     <option>To-do</option>
                                     <option>In progress</option>
@@ -98,19 +98,19 @@
 
                             <div class="form-group p-2">
                                 <label for="addDate">Due Date: </label><br>
-                                <input required type="date" id="addDate" class="form-control" name="date">
+                                <input  type="date" id="addDate" class="form-control" name="date">
                                 <!-- date validation feedback -->
                                 <div class="valid-feedback">Nice date!</div>
                                 <div class="invalid-feedback">Please enter a valid date.</div>                                  
                             </div>  
-
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Reset</button>
+                            <button id="addSubmit" type="submit" class="btn btn-light">Submit</button>                            
                           </div>
                         
                         </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-light" data-dismiss="modal">Reset</button>
-                  <button id="addSubmit" type="submit" class="btn btn-light">Submit</button>
+
                 </div>
               </div>
             </div>
@@ -122,7 +122,7 @@
 
     <div class="card-div">
         <ul id='tasksList'>
-            <div class="card layout">
+            <li class="card layout">
                 <div class="card-header rounded">
 
                 <h5>Task Name: <small>Put out the BINS</small></h5> 
@@ -140,7 +140,26 @@
                 <a href="#" class="btn btn-light area taskComplete">Done</a>
                 <a href="#" class="btn btn-light area taskDelete">Delete</a>
                 </div>
-            </div>
+            </li>
+            <li class="card layout">
+                <div class="card-header rounded">
+
+                <h5>Task Name: <small>Put out the BINS</small></h5> 
+                </div>
+                <div class="card-body">
+                <h5 class="card-title">
+                    <strong>Description: </strong> <small>You must put the bins out, because if you don't we will have very stinky yucky gross ew gross yucky smelly bins >:(</small>
+                </h5>
+                <p class="card-text">
+                    Assigned to: YOU<br>
+                    Due Date: NOW<br>
+                    Status: DO IT<br>                
+                </p>
+                <label for="yes"> 
+                <a href="#" class="btn btn-light area taskComplete">Done</a>
+                <a href="#" class="btn btn-light area taskDelete">Delete</a>
+                </div>
+            </li>            
         </ul>
     </div>
 

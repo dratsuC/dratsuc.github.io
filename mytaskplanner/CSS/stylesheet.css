@@ -89,9 +89,6 @@ footer {
 .taskModal {
 		background-color: #F87575;
 }
-.editModal {
-	background-color: #BFCC94;
-}
 .modal-content {
 	border-radius: .75rem;
 	min-width: 17rem;
@@ -102,9 +99,6 @@ footer {
 /*	background-color: ;*/
 	align-items: center;
 }
-/*.modal-footer {
-	padding-top: 0;
-}*/
 .exit {
 	margin: .2rem;
 	border-radius: .5rem;
@@ -138,17 +132,21 @@ footer {
 	position: relative;
 /*	border: 1px solid #404040;*/
 }
+#tasksList {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+}
 .card-div {
 	min-width: 50%;
-	max-width: 90%;
+	max-width: 90%;		
 	padding: 1rem;
 	margin: auto;
 	border: 0.1rem solid #363636;
 	box-shadow: 3px 3px #353535;
 	border-radius: .75rem;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+
 	background-color: #00000046;
 }
 

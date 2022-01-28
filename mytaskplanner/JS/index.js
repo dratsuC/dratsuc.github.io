@@ -25,7 +25,7 @@ let todaysDate = new Date(Date.now())
 
 
 
-let getDate = () => {
+let displayDate = () => {
 	try {
 		let displayD = document.querySelector("#date");
 		displayD.innerHTML = `Welcome! Today is ${d}.`;			
@@ -37,63 +37,61 @@ let getDate = () => {
 
 
 //calling date function
-getDate();
+displayDate();
 
 
 /* ------------------------------/
-// 	FORM VALIDATION FUNCTION	//
+// 	FORM VALIDATION	//
 /----------------------------- */ 
 
 
+let form = document.querySelector('#addTask');
 
 
 
-// counter for checking if any invalid inputs were given
-let invalidCounter = 0;
-let editInvalidCounter = 0;
+	/////////////////////////////////////////////
+	// VALIDATION FOR 'ADD NEW FORM' MODAL WINDOW//
+	/////////////////////////////////////////////
+	form.addEventListener('submit', (event) => {
 
-// submit buttons for each form
-let addButton = document.querySelector('#addSubmit');
+	// counter for checking if any invalid inputs were given
+	let invalidCounter = 0;
+	let editInvalidCounter = 0;
+	// submit button
+	let addButton = document.querySelector('#addSubmit');
+	// grabbing add task inputs 
+	const addName = document.querySelector('#addName');
+	const addDescription = document.querySelector('#addDescription');
+	const addAssignedTo = document.querySelector('#addAssignedTo')
+	const addStatus = document.querySelector('#addStatus');
+	const addDate = document.querySelector('#addDate');
 
+	/////////////////////////////////////////////
+	// FUNCTION FOR CLEARING HTML CLASSES //
+	/////////////////////////////////////////////
+	let clearForm = () => {
+		addName.value = '';
+		addDescription.value = '';
+		addAssignedTo.value = '';
+		addStatus.value = '';
+		addDate.value = '';
+		addName.classList.remove("is-valid");
+	    addDescription.classList.remove("is-valid");
+	    addAssignedTo.classList.remove("is-valid");
+	    addStatus.classList.remove("is-valid");
+	   	addDate.classList.remove("is-valid");
+	}
 
-// variable to store each form
-let addTaskForm = document.querySelector('#addTask');
+	event.preventDefault();
 
+	// console.log("Task Name :" + addName.value);
+	// console.log("Task Description :" + addDescription.value);
+	// console.log("Task Assigned To :" + addAssignedTo.value);
+	// console.log("Task Due Date :" + addDate.value);
+	// console.log("Task Status:" + addStatus.value);	
 
-// grabbing add task inputs 
-const addName = document.querySelector('#addName');
-const addDescription = document.querySelector('#addDescription');
-const addAssignedTo = document.querySelector('#addAssignedTo')
-const addStatus = document.querySelector('#addStatus');
-const addDate = document.querySelector('#addDate');
-/////////////////////////////////////////////	
-
-
-
-/////////////////////////////////////////////
-// FUNCTION FOR CLEARING HTML CLASSES //
-/////////////////////////////////////////////
-let clearForms = () => {
-	addName.value = '';
-	addDescription.value = '';
-	addAssignedTo.value = '';
-	addStatus.value = '';
-	addDate.value = '';
-	// need to add in classes to initialise
-
-}
-
-
-
-
-
-/////////////////////////////////////////////
-// VALIDATION FOR 'ADD NEW FORM' MODAL WINDOW//
-/////////////////////////////////////////////
-addButton.addEventListener('click', (event) => {
 
 	try {
-
 		invalidCounter = 0;
 
 		if (addName.value.length >= 5) {
@@ -157,9 +155,7 @@ addButton.addEventListener('click', (event) => {
 			invalidCounter++
 		}
 		//end of date logic
-		console.log(invalidCounter)
-		console.log(addDateArray)
-		console.log(todaysDate)
+
 
 		// evaluate invalidCounter to check for 
 		// invalid inputs
@@ -172,17 +168,15 @@ addButton.addEventListener('click', (event) => {
 				addAssignedTo.value,
 				addStatus.value,
 				addDate.value)
-
-
-
 			// clear inputs ready for next
 			// task creation
-			addTaskForm.reset()	
-			taskManager.render()
+			clearForm();
+			taskManager.render();
 
 
 		} else {
-			event.preventDefault();
+			invalidCounter = 0;
+			return;
 		}
 
 
