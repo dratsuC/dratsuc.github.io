@@ -10,35 +10,24 @@
 
     <!--Stylesheet CSS-->
     <link rel="stylesheet" href="CSS/stylesheet.css"/>
-
-    
-    <title>Hello, world!</title>
+    <title>To-Do List</title>
+    <style>
+    body {
+      background-image: url('./Images/greyscale_city.png');
+      }
+    </style>
   </head>
   <body>
-
+    
     <!--Dashboard-->
-    <header class=" w-60 mx-auto">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <span id="date" ></span>
-                    <p><strong>Welcome!</strong></p>
-                </div>
-            </div>
 
-            <div id="titleDiv" class="row mx-auto" >
-                <div class="col dashTitle">
-                    <h1>Dashboard</h1>
-                </div>
-                <div class="col dashLogo">
-                    <img class="Sun" src="Images/sun.png" alt="Sun"/>
-                </div>
-            </div>
-
-
+    <header>
+      <div class="row">
+        <div class="col welcomeCol">
+              <span id="date" ></span>
         </div>
-        
-        
+      </div>
+      <h1 class='dashStyle'>- Dashboard -</h1>
     </header>
 
     <main>
@@ -46,7 +35,7 @@
         <!-- Task adding button -->
         <div class="w-50 mx-auto">
                     <!-- Task adding button -->
-            <button type="button" class="task-add button btn btn-lg btn-block btn-light" data-toggle="modal" data-target="#taskModal">
+            <button type="button" id='task-add' class="button btn btn-lg btn-block btn-light" data-toggle="modal" data-target="#taskModal">
               +
             </button>
             <br>
@@ -131,7 +120,7 @@
           
    <!--Create card layout that represents a task card-->
 
-    <div class="card-div d-flex flex-wrap my-auto">
+    <div class="card-div">
 
         <div class="card layout">
             <div class="card-header rounded">
@@ -147,12 +136,51 @@
                 Due Date: NOW<br>
                 Status: DO IT<br>                
             </p>
-            <input type="checkbox" value="yes" class="checkbox">
-            <label for="yes">            
+            <label for="yes">  
+            <input type="checkbox" value="yes" class="checkbox">      
             <a href="#" class="btn btn-light area taskDelete">Delete</a>
             </div>
         </div>
-        
+
+        <div class="card layout">
+          <div class="card-header rounded">
+
+          <h5>Task Name: <small>Put out the BINS</small></h5> 
+          </div>
+          <div class="card-body">
+          <h5 class="card-title">
+              <strong>Description: </strong> <small>You must put the bins out, because if you don't we will have very stinky yucky gross ew gross yucky smelly bins >:(</small>
+          </h5>
+          <p class="card-text">
+              Assigned to: YOU<br>
+              Due Date: NOW<br>
+              Status: DO IT<br>                
+          </p>
+          <label for="yes">  
+          <input type="checkbox" value="yes" class="checkbox">          
+          <a href="#" class="btn btn-light area taskDelete">Delete</a>
+          </div>
+
+      </div>
+      <div class="card layout">
+        <div class="card-header rounded">
+
+        <h5>Task Name: <small>Put out the BINS</small></h5> 
+        </div>
+        <div class="card-body">
+        <h5 class="card-title">
+            <strong>Description: </strong> <small>You must put the bins out, because if you don't we will have very stinky yucky gross ew gross yucky smelly bins >:(</small>
+        </h5>
+        <p class="card-text">
+            Assigned to: YOU<br>
+            Due Date: NOW<br>
+            Status: DO IT<br>                
+        </p>
+        <label for="yes"> 
+        <input type="checkbox" value="yes" class="checkbox">           
+        <a href="#" class="btn btn-light area taskDelete">Delete</a>
+        </div>
+    </div>
     </div>
 
     </main>
@@ -160,7 +188,8 @@
     <br>
     <!--Footer-->
     <footer class="bottom">
-        <p>©️Copyright 2021</p>
+        <p class='footerText'>©️Copyright 2021</p>
+        <p class='footerText'>Photo by Alex Azabache from Pexels</p>
     </footer>
     <!-- linking local JS files -->
     <script src='./JS/taskManager.js' type='text/javascript'></script>

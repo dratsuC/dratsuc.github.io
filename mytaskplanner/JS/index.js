@@ -13,7 +13,7 @@ plainDate = new Date()
 let d = new Date().toLocaleDateString('en-us', { 
 	weekday:"long", year:"numeric", month:"short", day:"numeric"});
 let getDate = () => {
-	d = `Today is ${d}.`
+	d = `Welcome! Today is ${d}.`
 	try {
 		let displayEl = document.querySelector("#date");
 		displayEl.innerHTML = d;			
