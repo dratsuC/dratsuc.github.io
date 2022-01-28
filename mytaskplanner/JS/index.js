@@ -10,8 +10,15 @@ let plainDate = [];
 let compareDate;
 plainDate = new Date()
 
-let d = new Date().toLocaleDateString('en-us', { 
-	weekday:"long", year:"numeric", month:"short", day:"numeric"});
+// let d = new Date().toLocaleDateString('en-us', { 
+// 	weekday:"long", year:"numeric", month:"short", day:"numeric"});
+let todaysDate = new Date(Date.now())
+.toLocaleString()
+.split(",")[0]
+.split("/");
+
+
+
 let getDate = () => {
 	d = `Welcome! Today is ${d}.`
 	try {
