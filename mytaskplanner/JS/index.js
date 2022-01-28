@@ -6,12 +6,12 @@
 
 // defining current date, 
 // and appending it to '#date' HTML element
-let plainDate = [];
-let compareDate;
-plainDate = new Date()
 
-// let d = new Date().toLocaleDateString('en-us', { 
-// 	weekday:"long", year:"numeric", month:"short", day:"numeric"});
+let d = new Date().toLocaleDateString('en-us', { 
+	weekday:"long", year:"numeric", month:"short", day:"numeric"});
+
+// defining current date in format
+// appropriate for 
 let todaysDate = new Date(Date.now())
 .toLocaleString()
 .split(",")[0]
@@ -19,11 +19,11 @@ let todaysDate = new Date(Date.now())
 
 
 
+
 let getDate = () => {
-	d = `Welcome! Today is ${d}.`
 	try {
-		let displayEl = document.querySelector("#date");
-		displayEl.innerHTML = d;			
+		let displayD = document.querySelector("#date");
+		displayD.innerHTML = `Welcome! Today is ${d}.`;			
 	} catch(error) {
 		console.log('Uh oh, something went oopsie!')
 		console.log(error)
@@ -129,13 +129,16 @@ addButton.addEventListener('click', (event) => {
 		let dateCounter = 0;
 		let addDateArray = addDate.value.split('-');
 
-		if (addDateArray[0] >= plainDate.getFullYear()){
-			if (addDateArray[1] >= plainDate.getMonth() + 1) {
-				if (addDateArray[2] >= plainDate.getDate()) {
-					dateCounter = 0;
-				} 
-			} 
-		} else {
+
+
+		if (
+			addDateArray[0] >= todaysDate[2] &&
+			parseInt(addDateArray[1]) >= todaysDate[0] && 
+			parseInt(addDateArray[2]) >= todaysDate[1] 
+		) {
+			dateCounter = 0;	
+		}
+		 else {
 			dateCounter++
 		}
 
@@ -151,6 +154,8 @@ addButton.addEventListener('click', (event) => {
 		}
 		//end of date logic
 		console.log(invalidCounter)
+		console.log(addDateArray)
+		console.log(todaysDate)
 
 		// evaluate invalidCounter to check for 
 		// invalid inputs
