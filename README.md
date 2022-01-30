@@ -4,7 +4,9 @@
 
 To-Do List to-do list:
 
-- START to rewrite tasks to fit new OOP format
+- Continue ticking off tasks
+
+- Add an interesting API for cool points
 
 - Add proper accessibility options for HTML file
 
