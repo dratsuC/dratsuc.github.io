@@ -131,16 +131,15 @@ let form = document.querySelector('#addTask');
 		let dateCounter = 0;
 		let addDateArray = addDate.value.split('-');
 
-
-
-		if (
-			addDateArray[0] >= todaysDate[2] &&
-			parseInt(addDateArray[1]) >= todaysDate[0] && 
-			parseInt(addDateArray[2]) >= todaysDate[1] 
-		) {
-			dateCounter = 0;	
-		}
-		 else {
+		console.log(addDateArray)
+		console.log(addDateArray)
+		if (addDateArray[0] >= todaysDate[0]) {
+			if (parseInt(addDateArray[1]) >= todaysDate[1]) {
+				if (parseInt(addDateArray[2]) >= todaysDate[2]) {
+					dateCounter = 0;
+				}
+			}
+		} else {
 			dateCounter++
 		}
 
