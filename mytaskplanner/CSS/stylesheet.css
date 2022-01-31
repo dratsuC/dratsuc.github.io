@@ -238,3 +238,22 @@ footer {
   opacity: 1;
   right: 0;
 }
+
+.socialMedia {
+	width: auto;
+	height: 3rem;
+}
+
+.socialSpan {
+	padding-top: 0;
+
+}
+
+.footerText {
+	padding: 0rem;
+	line-height: 0.5rem;
+}
+
+.copyrightFooter {
+	padding: 0;
+}
