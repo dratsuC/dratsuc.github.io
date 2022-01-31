@@ -25,6 +25,7 @@ header {
 	display: inline-flex;
 	justify-content: center;
 	max-height: 3rem;
+	padding: .6rem;
 }
 .socialDiv {
 	right: 20%;
@@ -52,12 +53,6 @@ header {
 .socialSpan img:hover {
 	-webkit-filter: grayscale(0%);
 }
-
-
-
-
-
-
 
 .dashTitle {
 	padding-top: 1rem;
