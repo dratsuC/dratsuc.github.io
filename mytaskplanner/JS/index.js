@@ -121,7 +121,6 @@ let form = document.querySelector('#addTask');
 
 		// DATE LOGIC
 
-<<<<<<< HEAD
 		// Counter for spotting invalid dates
 		let dateCounter = 0;
 
@@ -155,7 +154,6 @@ let form = document.querySelector('#addTask');
 		}else {
 			dateCounter++
 		}		
-=======
 
 			//if the counter is empty, the user 
 			// inputted a good date		
