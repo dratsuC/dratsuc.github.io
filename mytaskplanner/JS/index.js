@@ -15,14 +15,6 @@ const taskManager = new TaskManager(0);
 let d = new Date().toLocaleDateString('en-us', { 
 	weekday:"long", year:"numeric", month:"short", day:"numeric"});
 
-// defining current date in format
-// appropriate for 
-let todaysDate = new Date(Date.now())
-.toLocaleString()
-.split(",")[0]
-.split("/");
-
-
 
 
 let displayDate = () => {
@@ -128,20 +120,40 @@ let form = document.querySelector('#addTask');
 		}
 
 		// DATE LOGIC
-		let dateCounter = 0;
-		let addDateArray = addDate.value.split('-');
 
-		console.log(addDateArray)
-		console.log(addDateArray)
-		if (addDateArray[0] >= todaysDate[0]) {
-			if (parseInt(addDateArray[1]) >= todaysDate[1]) {
-				if (parseInt(addDateArray[2]) >= todaysDate[2]) {
-					dateCounter = 0;
-				}
-			}
-		} else {
+		// Counter for spotting invalid dates
+		let dateCounter = 0;
+
+		// Current date
+		let todaysDate = new Date(Date.now());
+
+		// Formatting current date
+		const year = todaysDate.getFullYear().toString();
+		const month = (todaysDate.getMonth() + 1).toString();
+		const date = todaysDate.getDate();		
+
+		// Date given by user
+		let userDate = new Date(addDate.value);
+
+		// Formatting date given by user
+		const formattedYear = userDate.getFullYear().toString();
+		const formattedMonth = (userDate.getMonth() + 1).toString();
+		const formattedDate = userDate.getDate();
+
+
+		// console.log(todaysDate);
+		// console.log(formattedYear, formattedMonth, formattedDate);
+		// console.log(userDate);
+
+		if (formattedYear >= year && formattedMonth === month) {
+			if(formattedDate >= date) {
+			dateCounter = 0 
+			} else {dateCounter++}
+		} else if (formattedYear >= year && formattedMonth > month) {
+			dateCounter = 0
+		}else {
 			dateCounter++
-		}
+		}		
 
 			//if the counter is empty, the user 
 			// inputted a good date		
