@@ -131,17 +131,42 @@ let form = document.querySelector('#addTask');
 		let dateCounter = 0;
 		let addDateArray = addDate.value.split('-');
 
-		console.log(addDateArray)
-		console.log(addDateArray)
-		if (addDateArray[0] >= todaysDate[0]) {
-			if (parseInt(addDateArray[1]) >= todaysDate[1]) {
-				if (parseInt(addDateArray[2]) >= todaysDate[2]) {
-					dateCounter = 0;
+		// console.log(todaysDate)
+		// console.log(addDateArray)
+		
+		let date = new Date(addDate.value);
+		let formatted_Date = date.getDate();
+		let formattedMonth = date.getMonth() + 1;
+		let formattedYear = date.getFullYear();
+		
+		// add validations
+		
+		if ((formattedYear >= todaysDate[2]) && (formattedMonth === todaysDate[1])) {
+			if(formatted_Date >= todaysDate[0]) {
+			dateCounter = 0 
+			} else {dateCounter++}
+		} else if ((formattedYear >= todaysDate[2]) && (formattedMonth > todaysDate[1])) {
+			dateCounter = 0
+		} else {
+			dateCounter++
+		}
+		
+		console.log(formattedYear);
+		console.log(formattedMonth);
+		console.log(formatted_Date);
+		console.log(todaysDate);
+		console.log(addDate.value);
+		/*if (addDateArray[2] >= todaysDate[0]) { // year
+			if (parseInt(addDateArray[1]) >= todaysDate[1]) { // month
+				if (parseInt(addDateArray[0]) >= todaysDate[2]) { // date
+					dateCounter = 0; 
 				}
 			}
 		} else {
 			dateCounter++
-		}
+		}*/
+
+		if (addDate) // year
 
 			//if the counter is empty, the user 
 			// inputted a good date		
@@ -184,4 +209,16 @@ let form = document.querySelector('#addTask');
 		console.log(error)
 	}
 })
+
+// tasks list event listener
+let tasks_list = document.querySelector('#tasksList');
+
+tasks_list.addEventListener('click', (event) => {
+	if (event.target.classList === 'taskComplete') {
+		const parentTask = event.target.parentElement;
+		console.log(parentTask);
+	}
+});
+
+console.log(tasks_list);
 

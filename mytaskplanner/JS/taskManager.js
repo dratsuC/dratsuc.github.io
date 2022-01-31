@@ -27,11 +27,6 @@ let createTaskHtml = (
 	return html;
 }
 
-
-
-
-
-
 class TaskManager {
 	constructor(currentId = 0) {
 		this.tasks = [];
