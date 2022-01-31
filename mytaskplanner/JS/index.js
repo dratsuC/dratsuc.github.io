@@ -121,6 +121,7 @@ let form = document.querySelector('#addTask');
 
 		// DATE LOGIC
 
+<<<<<<< HEAD
 		// Counter for spotting invalid dates
 		let dateCounter = 0;
 
@@ -154,6 +155,7 @@ let form = document.querySelector('#addTask');
 		}else {
 			dateCounter++
 		}		
+=======
 
 			//if the counter is empty, the user 
 			// inputted a good date		
@@ -196,4 +198,16 @@ let form = document.querySelector('#addTask');
 		console.log(error)
 	}
 })
+
+// tasks list event listener
+let tasks_list = document.querySelector('#tasksList');
+
+tasks_list.addEventListener('click', (event) => {
+	if (event.target.classList === 'taskComplete') {
+		const parentTask = event.target.parentElement;
+		console.log(parentTask);
+	}
+});
+
+console.log(tasks_list);
 
