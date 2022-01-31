@@ -7,6 +7,7 @@ body {
 	margin: 1rem;
 	align-items: center;
 }
+
 header {
 	max-width: 50rem;
 	max-height: 19rem;
@@ -20,11 +21,43 @@ header {
 	padding-bottom: 5rem;*/
 }
 
-.aboutUsDiv {
-
-	left: 90%;
-	justify-content: flex-end;
+.navContainer {
+	display: inline-flex;
+	justify-content: center;
+	max-height: 3rem;
 }
+.socialDiv {
+	right: 20%;
+}
+.aboutUsDiv {
+	left: 20%;
+
+}
+
+@media screen and (max-width: 600px) {
+	.socialDiv {
+		right: 0%;
+	}
+	.aboutUsDiv {
+		left: 0%;
+	}
+}
+.socialSpan img{
+	width: 2.3rem;
+	height: 2.3rem;
+	-webkit-filter: grayscale(100%);
+	transition: -webkit-filter .4s ease-in-out;
+    
+}
+.socialSpan img:hover {
+	-webkit-filter: grayscale(0%);
+}
+
+
+
+
+
+
 
 .dashTitle {
 	padding-top: 1rem;
@@ -63,7 +96,7 @@ p {
 }
 
 .welcomeCol {
-	margin-top: 2rem;
+	margin-top: .2rem;
 }
 
 strong {
@@ -95,7 +128,7 @@ footer {
 	text-align: center;
 	margin-top: 3rem;
 	margin-bottom: auto;
-	background-color: #F0F4EF;
+/*	background-color: #F0F4EF;*/
 	color: black;
 }
 .checkbox {
@@ -190,24 +223,41 @@ footer {
 	margin: 0.5rem;
 }
 
-.checkbox:hover {
-	box-shadow: 1px 1px #404040;
-}
+
 #task-add:hover {
-	box-shadow: 6px 6px #606060;
-	background-color: rgba(248, 8, 50, .3);
+	box-shadow: 8px 6px #606060;
+	background-color: #F87575;
 }
 
+
+
+.socialMedia {
+	width: auto;
+	height: 3rem;
+}
+
+.socialSpan {
+	padding-top: 0;
+
+}
+
+.footerText {
+	padding: 0rem;
+	line-height: 0.5rem;
+}
+
+.copyrightFooter {
+	padding: 0;
+}
 
 .aboutUsButton {
-  display: inline-block;
-  border-radius: .5rem;
 
+  border-radius: .5rem;
   border: none;
   background-color: #F87575;
   text-align: center;
-  font-size: 1.4rem;
-  padding: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
   width: 10rem;
   transition: all 0.5s;
   cursor: pointer;
@@ -237,23 +287,4 @@ footer {
 .aboutUsButton:hover span:after {
   opacity: 1;
   right: 0;
-}
-
-.socialMedia {
-	width: auto;
-	height: 3rem;
-}
-
-.socialSpan {
-	padding-top: 0;
-
-}
-
-.footerText {
-	padding: 0rem;
-	line-height: 0.5rem;
-}
-
-.copyrightFooter {
-	padding: 0;
 }

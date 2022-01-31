@@ -140,20 +140,19 @@ let form = document.querySelector('#addTask');
 		const formattedMonth = (userDate.getMonth() + 1).toString();
 		const formattedDate = userDate.getDate();
 
-
 		// console.log(todaysDate);
 		// console.log(formattedYear, formattedMonth, formattedDate);
 		// console.log(userDate);
-
-		if (formattedYear >= year && formattedMonth === month) {
+		if (addDate.value) {
+			if (formattedYear >= year && formattedMonth === month) {
 			if(formattedDate >= date) {
 			dateCounter = 0 
 			} else {dateCounter++}
-		} else if (formattedYear >= year && formattedMonth > month) {
-			dateCounter = 0
-		}else {
-			dateCounter++
-		}		
+			} else if (formattedYear >= year && formattedMonth > month) {
+				dateCounter = 0
+			} else {dateCounter++}	
+		} else {dateCounter++}
+	
 
 			//if the counter is empty, the user 
 			// inputted a good date		
