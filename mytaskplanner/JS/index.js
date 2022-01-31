@@ -199,6 +199,8 @@ let form = document.querySelector('#addTask');
 
 // tasks list event listener
 let tasks_list = document.querySelector('#tasksList');
+console.log(tasks_list);
+console.log(tasks_list.childElement);
 
 tasks_list.addEventListener('click', (event) => {
 	if (event.target.classList === 'taskComplete') {
@@ -207,5 +209,5 @@ tasks_list.addEventListener('click', (event) => {
 	}
 });
 
-console.log(tasks_list);
+// console.log(tasks_list);
 
