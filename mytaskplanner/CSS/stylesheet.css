@@ -20,6 +20,12 @@ header {
 	padding-bottom: 5rem;*/
 }
 
+.aboutUsDiv {
+
+	left: 90%;
+	justify-content: flex-end;
+}
+
 .dashTitle {
 	padding-top: 1rem;
 }
@@ -192,3 +198,43 @@ footer {
 	background-color: rgba(248, 8, 50, .3);
 }
 
+
+.aboutUsButton {
+  display: inline-block;
+  border-radius: .5rem;
+
+  border: none;
+  background-color: #F87575;
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 1rem;
+  width: 10rem;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: .3rem;
+}
+
+.aboutUsButton span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.aboutUsButton span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.aboutUsButton:hover span {
+  padding-right: 25px;
+}
+
+.aboutUsButton:hover span:after {
+  opacity: 1;
+  right: 0;
+}
