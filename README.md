@@ -11,3 +11,5 @@ To-Do List to-do list:
 - Add proper accessibility options for HTML file
 
 - Refine button animations in CSS (done button, delete button, etc.)
+
+- Add a hidden button which slowly shows a thank you message on the screen for the presentation
