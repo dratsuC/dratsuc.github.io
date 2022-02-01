@@ -1,11 +1,11 @@
 'use strict';
 
 let createTaskHtml = (
-	name, description, assignedTo, status, dueDate
+	id, name, description, assignedTo, status, dueDate
 	) => {
 
 	const html = `
-	    <li class="card layout">
+	    <li class="card layout" data-task-id="${id}">
 	        <div class="card-header rounded">
 
 	        <h5>Task Name: <small>${name}</small></h5> 
@@ -20,8 +20,12 @@ let createTaskHtml = (
 	            Status: ${status}<br>                
 	        </p>
 	        <label for="yes">  
-	        <a href="#" class="btn btn-light area taskComplete">Done</a>     
-	        <a href="#" class="btn btn-light area taskDelete">Delete</a>
+	        <a class="btn btn-light area taskComplete">
+	        Done
+	        </a>     
+	        <a class="btn btn-light area taskDelete">
+	        Delete
+	        </a>
 	    </li>
 				`
 	return html;
@@ -45,7 +49,17 @@ class TaskManager {
 		this.tasks.push(task);
 		console.log(this.tasks)
 
-	}
+	};
+	getTaskById(taskId) {
+		let foundTask;
+		for(let i = 0; i < this.tasks.length; i++) {
+			let task = this.tasks[i];
+			if (task.id === taskId) {
+				foundTask = task;
+			}
+		}
+		return foundTask;
+	};	
 	render() {
 		let tasksHtmlList = [];
 		for(let i = 0; i < this.tasks.length; i++) {
@@ -55,6 +69,7 @@ class TaskManager {
 			let formattedDate = 
 				`${date.getDate()}/${(date.getMonth() + 1)}/${date.getFullYear()}`;
 			let taskHtml = createTaskHtml(
+				task.id,
 				task.name,
 				task.description,
 				task.assignedTo,
@@ -69,7 +84,7 @@ class TaskManager {
 
 		let tasksList = document.querySelector('#tasksList');
 		tasksList.innerHTML = tasksHtml;
-	}
+	};
 
 
 

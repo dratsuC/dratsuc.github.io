@@ -202,10 +202,15 @@ console.log(tasks_list);
 console.log(tasks_list.childElement);
 
 tasks_list.addEventListener('click', (event) => {
-	if (event.target.classList === 'taskComplete') {
-		const parentTask = event.target.parentElement;
-		console.log(parentTask);
+	if (event.target.classList.contains('taskComplete')) {
+		const parentTask = event.target.parentElement.parentElement.parentElement;
+		let taskId = Number(parentTask.dataset.taskId);
+		let task = taskManager.getTaskById(taskId);
+		task.status = 'Done';
+		taskManager.render()
+		console.log(task)		
 	}
+
 });
 
 // console.log(tasks_list);

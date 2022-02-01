@@ -219,6 +219,11 @@ footer {
 	margin: 0.5rem;
 }
 
+.taskComplete {
+
+}
+
+
 
 #task-add:hover {
 	box-shadow: 8px 6px #606060;
