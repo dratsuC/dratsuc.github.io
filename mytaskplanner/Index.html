@@ -185,101 +185,51 @@
     <div class="card-div">
         <h2 id='tasksHeading'>Tasks</h2>
         <ul id='tasksList'>
-            <li class="card layout">
-                <div class="card-header rounded">
-
-                <h5>Task Name: <small>Eu sem integer vitae justo eget magna fermentum iaculis eu.</small></h5> 
-                </div>
-                <div class="card-body">
-                <h5 class="card-title">
-                    <strong>Description: </strong> <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis vitae et leo duis ut. </small>
-                </h5>
-                <p class="card-text">
-                    Assigned to: Faucibus<br>
-                    Due Date: 10/10/1010<br>
-                    Status: In-Progress<br>                
-                </p>
-                <label for="yes"> 
-                <a href="#" class="btn btn-light area taskComplete">Done</a>
-                <a href="#" class="btn btn-light area taskDelete">Delete</a>
-                </div>
-            </li>
-            <li class="card layout">
-                <div class="card-header rounded">
-
-                <h5>Task Name: <small>Eu sem integer vitae justo eget magna fermentum iaculis eu.</small></h5> 
-                </div>
-                <div class="card-body">
-                <h5 class="card-title">
-                    <strong>Description: </strong> <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis vitae et leo duis ut. </small>
-                </h5>
-                <p class="card-text">
-                    Assigned to: Faucibus<br>
-                    Due Date: 10/10/1010<br>
-                    Status: In-Progress<br>                
-                </p>
-                <label for="yes"> 
-                <a href="#" class="btn btn-light area taskComplete">Done</a>
-                <a href="#" class="btn btn-light area taskDelete">Delete</a>
-                </div>
-            </li>
-            <li class="card layout">
-                <div class="card-header rounded">
-
-                <h5>Task Name: <small>Eu sem integer vitae justo eget magna fermentum iaculis eu.</small></h5> 
-                </div>
-                <div class="card-body">
-                <h5 class="card-title">
-                    <strong>Description: </strong> <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis vitae et leo duis ut. </small>
-                </h5>
-                <p class="card-text">
-                    Assigned to: Faucibus<br>
-                    Due Date: 10/10/1010<br>
-                    Status: In-Progress<br>                
-                </p>
-                <label for="yes"> 
-                <a href="#" class="btn btn-light area taskComplete">Done</a>
-                <a href="#" class="btn btn-light area taskDelete">Delete</a>
-                </div>
-            </li>
-            <li class="card layout">
-                <div class="card-header rounded">
-
-                <h5>Task Name: <small>Eu sem integer vitae justo eget magna fermentum iaculis eu.</small></h5> 
-                </div>
-                <div class="card-body">
-                <h5 class="card-title">
-                    <strong>Description: </strong> <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis vitae et leo duis ut. </small>
-                </h5>
-                <p class="card-text">
-                    Assigned to: Faucibus<br>
-                    Due Date: 10/10/1010<br>
-                    Status: In-Progress<br>                
-                </p>
-                <label for="yes"> 
-                <a href="#" class="btn btn-light area taskComplete">Done</a>
-                <a href="#" class="btn btn-light area taskDelete">Delete</a>
-                </div>
-            </li>
-            <li class="card layout">
-                <div class="card-header rounded">
-
-                <h5>Task Name: <small>Eu sem integer vitae justo eget magna fermentum iaculis eu.</small></h5> 
-                </div>
-                <div class="card-body">
-                <h5 class="card-title">
-                    <strong>Description: </strong> <small>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sagittis vitae et leo duis ut. </small>
-                </h5>
-                <p class="card-text">
-                    Assigned to: Faucibus<br>
-                    Due Date: 10/10/1010<br>
-                    Status: In-Progress<br>                
-                </p>
-                <label for="yes"> 
-                <a href="#" class="btn btn-light area taskComplete">Done</a>
-                <a href="#" class="btn btn-light area taskDelete">Delete</a>
-                </div>
-            </li>                                                
+            <li class="card layout" data-task-id="${id}">
+              <div class="card-header rounded">
+    
+              <h5>Task Name: <small>${name}</small></h5> 
+              </div>
+              <div class="card-body">
+              <h5 class="card-title">
+                  <strong>Description: </strong> <small>${description}</small>
+              </h5>
+              <p class="card-text">
+                  Assigned to: ${assignedTo}<br>
+                  Due Date: ${dueDate}<br>
+                  Status: ${status}<br>                
+              </p>
+              <label for="yes">  
+              <a class="btn btn-light area taskComplete DoneBtn" onclick = 'displayHidden()'>
+              Done
+              </a>     
+              <a class="btn btn-light area taskDelete">
+              Delete
+              </a>
+          </li>
+            
+          <li class="card layout" data-task-id="${id}">
+            <div class="card-header rounded">
+  
+            <h5>Task Name: <small>${name}</small></h5> 
+            </div>
+            <div class="card-body">
+            <h5 class="card-title">
+                <strong>Description: </strong> <small>${description}</small>
+            </h5>
+            <p class="card-text">
+                Assigned to: ${assignedTo}<br>
+                Due Date: ${dueDate}<br>
+                Status: ${status}<br>                
+            </p>
+            <label for="yes">  
+            <a class="btn btn-light area taskComplete" id="DoneBtn" onclick = 'displayHidden()'>
+            Done
+            </a>     
+            <a class="btn btn-light area taskDelete">
+            Delete
+            </a>
+        </li>
 
         </ul>
     </div>

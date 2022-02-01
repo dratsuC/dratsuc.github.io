@@ -207,11 +207,21 @@ tasks_list.addEventListener('click', (event) => {
 		let taskId = Number(parentTask.dataset.taskId);
 		let task = taskManager.getTaskById(taskId);
 		task.status = 'Done';
-		taskManager.render()
-		console.log(task)		
+		task.style.color = "red";
+		taskManager.render();		
 	}
 
 });
+
+// functions
+function displayHidden() {
+	// document.querySelector('.taskComplete').style.backgroundColor = 'black';
+	let buttonTaskComplete = document.getElementById('.DoneBtn');
+	console.log(buttonTaskComplete);
+	buttonTaskComplete.style.color = "red";
+	
+}
+
 
 // console.log(tasks_list);
 

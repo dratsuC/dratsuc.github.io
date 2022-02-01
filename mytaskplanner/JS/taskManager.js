@@ -20,7 +20,7 @@ let createTaskHtml = (
 	            Status: ${status}<br>                
 	        </p>
 	        <label for="yes">  
-	        <a class="btn btn-light area taskComplete">
+	        <a class="btn btn-light area taskComplete DoneBtn" onclick = 'displayHidden()'>
 	        Done
 	        </a>     
 	        <a class="btn btn-light area taskDelete">
