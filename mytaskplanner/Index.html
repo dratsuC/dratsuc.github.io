@@ -10,6 +10,7 @@
 
     <!--Stylesheet CSS-->
     <link rel="stylesheet" href="CSS/stylesheet.css"/>
+    
     <title>To-Do List</title>
     <style>
     body {
@@ -185,51 +186,7 @@
     <div class="card-div">
         <h2 id='tasksHeading'>Tasks</h2>
         <ul id='tasksList'>
-            <li class="card layout" data-task-id="${id}">
-              <div class="card-header rounded">
-    
-              <h5>Task Name: <small>${name}</small></h5> 
-              </div>
-              <div class="card-body">
-              <h5 class="card-title">
-                  <strong>Description: </strong> <small>${description}</small>
-              </h5>
-              <p class="card-text">
-                  Assigned to: ${assignedTo}<br>
-                  Due Date: ${dueDate}<br>
-                  Status: ${status}<br>                
-              </p>
-              <label for="yes">  
-              <a class="btn btn-light area taskComplete DoneBtn" onclick = 'displayHidden()'>
-              Done
-              </a>     
-              <a class="btn btn-light area taskDelete">
-              Delete
-              </a>
-          </li>
-            
-          <li class="card layout" data-task-id="${id}">
-            <div class="card-header rounded">
-  
-            <h5>Task Name: <small>${name}</small></h5> 
-            </div>
-            <div class="card-body">
-            <h5 class="card-title">
-                <strong>Description: </strong> <small>${description}</small>
-            </h5>
-            <p class="card-text">
-                Assigned to: ${assignedTo}<br>
-                Due Date: ${dueDate}<br>
-                Status: ${status}<br>                
-            </p>
-            <label for="yes">  
-            <a class="btn btn-light area taskComplete" id="DoneBtn" onclick = 'displayHidden()'>
-            Done
-            </a>     
-            <a class="btn btn-light area taskDelete">
-            Delete
-            </a>
-        </li>
+
 
         </ul>
     </div>

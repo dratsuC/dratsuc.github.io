@@ -215,6 +215,10 @@ footer {
 	background-color: #F0F4EF;
 }
 
+#invisible {
+	display: none;
+}
+
 .area {
 	margin: 0.5rem;
 }

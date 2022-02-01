@@ -20,7 +20,7 @@ let createTaskHtml = (
 	            Status: ${status}<br>                
 	        </p>
 	        <label for="yes">  
-	        <a class="btn btn-light area taskComplete DoneBtn" onclick = 'displayHidden()'>
+	        <a class="btn btn-light area taskComplete">
 	        Done
 	        </a>     
 	        <a class="btn btn-light area taskDelete">
@@ -49,7 +49,7 @@ class TaskManager {
 		this.tasks.push(task);
 		console.log(this.tasks)
 
-	};
+	}
 	getTaskById(taskId) {
 		let foundTask;
 		for(let i = 0; i < this.tasks.length; i++) {
@@ -59,7 +59,7 @@ class TaskManager {
 			}
 		}
 		return foundTask;
-	};	
+	}	
 	render() {
 		let tasksHtmlList = [];
 		for(let i = 0; i < this.tasks.length; i++) {
@@ -84,7 +84,25 @@ class TaskManager {
 
 		let tasksList = document.querySelector('#tasksList');
 		tasksList.innerHTML = tasksHtml;
-	};
+	}
+	save() {
+		let tasksJson = JSON.stringify(this.tasks);
+		console.log(tasksJson);
+		localStorage.setItem('tasks', tasksJson);
+		let currentId = String(this.currentId);
+		console.log(currentId);
+		localStorage.setItem('currentId', currentId);
+	}
+	load() {
+		if (localStorage.getItem('tasks')) {
+			let tasksJson = localStorage.getItem('tasks');
+			this.tasks = JSON.parse(tasksJson);
+		}
+		if(localStorage.getItem('currentId')) {
+			let currentId = localStorage.getItem('currentId');
+			this.currentId = Number(currentId);
+		}
+	}
 
 
 
