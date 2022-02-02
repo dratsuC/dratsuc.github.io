@@ -211,14 +211,24 @@ tasks_list.addEventListener('click', (event) => {
 		let task = taskManager.getTaskById(taskId);
 		task.status = 'Done';
 		console.log(task);
-		event.target.classList.add('d-none')
+		// event.target.classList.add('d-none')
 		console.log(event.target);
 		// event.target.style.color="red";
+		taskManager.render();
+		taskManager.save();	
+
+	} 
+	if (event.target.classList.contains('taskDelete')) {
+		const parentTask = event.target.parentElement.parentElement.parentElement;
+		let taskId = Number(parentTask.dataset.taskId);
+		let task = taskManager.getTaskById(taskId);
+		taskManager.deleteTask(taskId)
 		taskManager.render();
 		taskManager.save();		
 	} 
 
 });
+
 
 // functions
 // function displayHidden() {

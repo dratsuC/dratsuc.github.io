@@ -5,7 +5,8 @@ let createTaskHtml = (
 	) => {
 
 	const html = `
-	    <li class="card layout" data-task-id="${id}">
+	    <li class="card layout
+" data-task-id="${id}">
 	        <div class="card-header rounded">
 
 	        <h5>Task Name: <small>${name}</small></h5> 
@@ -46,6 +47,7 @@ class TaskManager {
 			status,
 			dueDate
 		};
+		console.log(this.tasks)
 		this.tasks.push(task);
 		console.log(this.tasks)
 
@@ -103,7 +105,15 @@ class TaskManager {
 			this.currentId = Number(currentId);
 		}
 	}
-
-
-
-}
+	deleteTask(taskId) {
+		let newTasks = [];
+		for(let i = 0; i < this.tasks.length; i++) {
+			const task = this.tasks[i];
+			if(task.id != taskId) {
+				newTasks.push(task);
+				this.currentId--;
+			}
+		}
+		this.tasks = newTasks;
+	}
+};

@@ -5,8 +5,10 @@
 }
 body {
 	margin: 1rem;
-	align-items: center;
+	align-items: center;	
 }
+
+
 
 header {
 	max-width: 50rem;
@@ -161,14 +163,19 @@ footer {
 }
 
 /*Card Layout*/
-
+.card-div {
+	padding: 1rem;
+	border: 0.1rem solid #363636;
+	box-shadow: 3px 3px #353535;
+	border-radius: .75rem;
+	background-color: #00000046;
+}
 .card {
-	max-width: 500px;
-  	margin: auto;
+
+	width: 80%;
+	max-width: 600px;
 	background-color: #F87575;
 	box-shadow: 3px 3px #1d1d1d;
-	left: 50% auto;
-	right: 50% auto;
 /*	min-width: 40%;
 	max-width: 75%;*/
 /*	display: inline-block;*/
@@ -179,22 +186,13 @@ footer {
 }
 
 #tasksList {
+	margin: 0 auto;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
 
+	justify-content: space-around;
 }
-.card-div {
-	min-width: 50%;
-	max-width: 90%;		
-	padding: 1rem;
-	margin: auto;
-	border: 0.1rem solid #363636;
-	box-shadow: 3px 3px #353535;
-	border-radius: .75rem;
 
-	background-color: #00000046;
-}
 
 .layout {
 	background-color: #F87575;
