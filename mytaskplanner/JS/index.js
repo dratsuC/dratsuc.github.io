@@ -14,6 +14,8 @@ taskManager.render();
 // defining current date, 
 // and appending it to '#date' HTML element
 
+const userName = prompt('Please enter your name: ')
+
 let d = new Date().toLocaleDateString('en-us', { 
 	weekday:"long", year:"numeric", month:"short", day:"numeric"});
 
@@ -22,7 +24,7 @@ let d = new Date().toLocaleDateString('en-us', {
 let displayDate = () => {
 	try {
 		let displayD = document.querySelector("#date");
-		displayD.innerHTML = `Welcome! Today is ${d}.`;			
+		displayD.innerHTML = `Welcome ${userName}! Today is ${d}.`;			
 	} catch(error) {
 		console.log('Uh oh, something went oopsie!')
 		console.log(error)
@@ -239,4 +241,10 @@ tasks_list.addEventListener('click', (event) => {
 	
 
 // console.log(tasks_list);
+
+
+
+// USERNAME ADDING
+
+
 
