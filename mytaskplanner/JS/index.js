@@ -36,6 +36,22 @@ let displayDate = () => {
 }
 
 
+/////////////////////////////////////////////
+// FUNCTION FOR CLEARING HTML CLASSES //
+/////////////////////////////////////////////
+let clearForm = () => {
+	addName.value = '';
+	addDescription.value = '';
+	addAssignedTo.value = '';
+	addStatus.value = 'Pick an option ↴';
+	addDate.value = '';
+	addName.classList.remove("is-valid");
+    addDescription.classList.remove("is-valid");
+    addAssignedTo.classList.remove("is-valid");
+    addStatus.classList.remove("is-valid");
+   	addDate.classList.remove("is-valid");
+}
+
 //calling date function
 displayDate();
 
@@ -54,155 +70,142 @@ let form = document.querySelector('#addTask');
 /////////////////////////////////////////////
 form.addEventListener('submit', (event) => {
 
-// counter for checking if any invalid inputs were given
-let invalidCounter = 0;
-let editInvalidCounter = 0;
-// submit button
-let addButton = document.querySelector('#addSubmit');
-// grabbing add task inputs 
-const addName = document.querySelector('#addName');
-const addDescription = document.querySelector('#addDescription');
-const addAssignedTo = document.querySelector('#addAssignedTo')
-const addStatus = document.querySelector('#addStatus');
-const addDate = document.querySelector('#addDate');
-
-/////////////////////////////////////////////
-// FUNCTION FOR CLEARING HTML CLASSES //
-/////////////////////////////////////////////
-let clearForm = () => {
-	addName.value = '';
-	addDescription.value = '';
-	addAssignedTo.value = '';
-	addStatus.value = '';
-	addDate.value = '';
-	addName.classList.remove("is-valid");
-    addDescription.classList.remove("is-valid");
-    addAssignedTo.classList.remove("is-valid");
-    addStatus.classList.remove("is-valid");
-   	addDate.classList.remove("is-valid");
-}
-
-event.preventDefault();
-
-// console.log("Task Name :" + addName.value);
-// console.log("Task Description :" + addDescription.value);
-// console.log("Task Assigned To :" + addAssignedTo.value);
-// console.log("Task Due Date :" + addDate.value);
-// console.log("Task Status:" + addStatus.value);	
+	// counter for checking if any invalid inputs were given
+	let invalidCounter = 0;
+	let editInvalidCounter = 0;
+	// submit button
+	let addButton = document.querySelector('#addSubmit');
+	// grabbing add task inputs 
+	const addName = document.querySelector('#addName');
+	const addDescription = document.querySelector('#addDescription');
+	const addAssignedTo = document.querySelector('#addAssignedTo')
+	const addStatus = document.querySelector('#addStatus');
+	const addDate = document.querySelector('#addDate');
 
 
-try {
-	invalidCounter = 0;
 
-	if (addName.value.length >= 5) {
-		addName.classList.add('is-valid');
-		addName.classList.remove('is-invalid');
-	} else {
-		addName.classList.remove('is-valid');
-		addName.classList.add('is-invalid');
-		invalidCounter++
-	}
-	if (addDescription.value.length >= 5 ) {
-		addDescription.classList.add('is-valid');
-		addDescription.classList.remove('is-invalid');
-	} else {
-		addDescription.classList.remove('is-valid');
-		addDescription.classList.add('is-invalid');
-		invalidCounter++
-	}
-	if (addAssignedTo.value.length >= 5 ) {
-		addAssignedTo.classList.add('is-valid');
-		addAssignedTo.classList.remove('is-invalid');
-	} else {
-		addAssignedTo.classList.remove('is-valid');
-		addAssignedTo.classList.add('is-invalid');
-		invalidCounter++
-	}
-	if (addStatus.value !== 'Pick an option ↴') {
-		addStatus.classList.add('is-valid');
-		addStatus.classList.remove('is-invalid');
-	} else {
-		addStatus.classList.remove('is-valid');
-		addStatus.classList.add('is-invalid');
-		invalidCounter++
-	}
+	event.preventDefault();
 
-	// DATE LOGIC
-
-	// Counter for spotting invalid dates
-	let dateCounter = 0;
-
-	// Current date
-	let todaysDate = new Date(Date.now());
-
-	// Formatting current date
-	const year = todaysDate.getFullYear().toString();
-	const month = (todaysDate.getMonth() + 1).toString();
-	const date = todaysDate.getDate();		
-
-	// Date given by user
-	let userDate = new Date(addDate.value);
-
-	// Formatting date given by user
-	const formattedYear = userDate.getFullYear().toString();
-	const formattedMonth = (userDate.getMonth() + 1).toString();
-	const formattedDate = userDate.getDate();
-
-	// console.log(todaysDate);
-	// console.log(formattedYear, formattedMonth, formattedDate);
-	// console.log(userDate);
-	if (addDate.value) {
-		if (formattedYear >= year && formattedMonth === month) {
-		if(formattedDate >= date) {
-		dateCounter = 0 
-		} else {dateCounter++}
-		} else if (formattedYear >= year && formattedMonth > month) {
-			dateCounter = 0
-		} else {dateCounter++}	
-	} else {dateCounter++}
+	// console.log("Task Name :" + addName.value);
+	// console.log("Task Description :" + addDescription.value);
+	// console.log("Task Assigned To :" + addAssignedTo.value);
+	// console.log("Task Due Date :" + addDate.value);
+	// console.log("Task Status:" + addStatus.value);	
 
 
-		//if the counter is empty, the user 
-		// inputted a good date		
-	if (!dateCounter) {
-		addDate.classList.add('is-valid');
-		addDate.classList.remove('is-invalid');
-	} else {
-		addDate.classList.remove('is-valid');
-		addDate.classList.add('is-invalid');
-		invalidCounter++
-	}
-	//end of date logic
-
-
-	// evaluate invalidCounter to check for 
-	// invalid inputs
-	if (invalidCounter === 0) {
-		// Pass form inputs to object
-		// addTask method
-		taskManager.addTask(
-			addName.value,
-			addDescription.value,
-			addAssignedTo.value,
-			addStatus.value,
-			addDate.value)
-		// clear inputs ready for next
-		// task creation
-		clearForm();
-		taskManager.render();
-		taskManager.save();	
-
-
-	} else {
+	try {
 		invalidCounter = 0;
-		return;
+
+		if (addName.value.length >= 5) {
+			addName.classList.add('is-valid');
+			addName.classList.remove('is-invalid');
+		} else {
+			addName.classList.remove('is-valid');
+			addName.classList.add('is-invalid');
+			invalidCounter++
+		}
+		if (addDescription.value.length >= 5 ) {
+			addDescription.classList.add('is-valid');
+			addDescription.classList.remove('is-invalid');
+		} else {
+			addDescription.classList.remove('is-valid');
+			addDescription.classList.add('is-invalid');
+			invalidCounter++
+		}
+		if (addAssignedTo.value.length >= 5 ) {
+			addAssignedTo.classList.add('is-valid');
+			addAssignedTo.classList.remove('is-invalid');
+		} else {
+			addAssignedTo.classList.remove('is-valid');
+			addAssignedTo.classList.add('is-invalid');
+			invalidCounter++
+		}
+		if (addStatus.value !== 'Pick an option ↴') {
+			addStatus.classList.add('is-valid');
+			addStatus.classList.remove('is-invalid');
+		} else {
+			addStatus.classList.remove('is-valid');
+			addStatus.classList.add('is-invalid');
+			invalidCounter++
+		}
+
+		// DATE LOGIC
+
+		// Counter for spotting invalid dates
+		let dateCounter = 0;
+
+		// Current date
+		let todaysDate = new Date(Date.now());
+
+		// Formatting current date
+		const year = todaysDate.getFullYear().toString();
+		const month = (todaysDate.getMonth() + 1).toString();
+		const date = todaysDate.getDate();		
+
+		// Date given by user
+		let userDate = new Date(addDate.value);
+
+		// Formatting date given by user
+		const formattedYear = userDate.getFullYear().toString();
+		const formattedMonth = (userDate.getMonth() + 1).toString();
+		const formattedDate = userDate.getDate();
+
+		// console.log(todaysDate);
+		// console.log(formattedYear, formattedMonth, formattedDate);
+		// console.log(userDate);
+		if (addDate.value) {
+			if (formattedYear >= year && formattedMonth === month) {
+			if(formattedDate >= date) {
+			dateCounter = 0 
+			} else {dateCounter++}
+			} else if (formattedYear >= year && formattedMonth > month) {
+				dateCounter = 0
+			} else {dateCounter++}	
+		} else {dateCounter++}
+
+
+			//if the counter is empty, the user 
+			// inputted a good date		
+		if (!dateCounter) {
+			addDate.classList.add('is-valid');
+			addDate.classList.remove('is-invalid');
+		} else {
+			addDate.classList.remove('is-valid');
+			addDate.classList.add('is-invalid');
+			invalidCounter++
+		}
+		//end of date logic
+
+
+		// evaluate invalidCounter to check for 
+		// invalid inputs
+		if (invalidCounter === 0) {
+			// Pass form inputs to object
+			// addTask method
+			taskManager.addTask(
+				addName.value,
+				addDescription.value,
+				addAssignedTo.value,
+				addStatus.value,
+				addDate.value)
+			// clear inputs ready for next
+			// task creation
+			console.log('Task form submitted')
+			clearForm();
+			taskManager.render();
+			taskManager.save();	
+
+
+		} else {
+			invalidCounter = 0;
+			return;
+		}
+
+
+	} catch(error) {
+		console.log('Something went wrong. Please read.')
+		console.log(error)
 	}
-
-
-} catch(error) {
-	console.log('Something went wrong. Please read.')
-	console.log(error)
-}
 })
 
 // tasks list event listener
@@ -219,7 +222,7 @@ tasks_list.addEventListener('click', (event) => {
 		// console.log(event.target);
 		// event.target.style.color="red";
 		// ${(status === 'In progress') ? ('') : 'invisible'};
-		displayHidden()
+		// displayHidden()
 		taskManager.render();
 		taskManager.save();	
 	} 
@@ -235,18 +238,27 @@ tasks_list.addEventListener('click', (event) => {
 });
 
 
-// functions
-function displayHidden() {
-	// document.querySelector('.taskComplete').style.backgroundColor = 'black';
-	let x = document.querySelector(".taskComplete");
-	// console.log(x)
-	if (x.style.display === "none") {
-	x.style.display = "block";
-	} else {
-	x.style.display = "none";
-	}
+// Event listener for 'reset' modal button
+let resetButton = document.querySelector('#addReset')
+resetButton.addEventListener('click', () => {
+	clearForm();
+	console.log('Task form reset')
+});
 
-}
+
+
+// functions
+// function displayHidden() {
+// 	// document.querySelector('.taskComplete').style.backgroundColor = 'black';
+// 	let x = document.querySelector(".taskComplete");
+// 	// console.log(x)
+// 	if (x.style.display === "none") {
+// 	x.style.display = "block";
+// 	} else {
+// 	x.style.display = "none";
+// 	}
+
+// }
 
 // console.log(tasks_list);
 

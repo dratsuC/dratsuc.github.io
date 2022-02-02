@@ -4,7 +4,9 @@ let createTaskHtml = (
 	id, name, description, assignedTo, status, dueDate
 	) => {
 
-	const html = `
+	const html = 
+
+		`
 	    <li class="card card-layout" 
 	    data-task-id="${id}">
 	        <div class="card-header rounded">
@@ -12,25 +14,26 @@ let createTaskHtml = (
 	        <h5>Task Name: <small>${name}</small></h5> 
 	        </div>
 	        <div class="card-body">
+	        <div class="card-text">
+	            <div class="card-entry">Assigned to: <span>${assignedTo}</span></div>
+	            <div class="card-entry">Due Date: <span>${dueDate}</span></div>
+	            <div class="card-entry">Status: <span>${status}</span></div>               
+	        </div>
 	        <h5 class="card-title">
 	            <strong>Description: </strong> <small>${description}</small>
-	        </h5>
-	        <p class="card-text">
-	            Assigned to: ${assignedTo}<br>
-	            Due Date: ${dueDate}<br>
-	            Status: ${status}<br>                
-	        </p>
-
-	        <label for="yes">  
-	        <button class="card-button taskComplete ${(status === 'Done')
-	         ? 'invisible' : 'visible'}">
-	        Done
-	        </button>     
-	        <button class=" card-button taskDelete">
-	        Delete
-	        </button>
+	        </h5>	 
+	        <div class='cardButtons'>
+		        <button class=" cardDone btn btn-light taskComplete ${(status === 'Done')
+		         ? 'invisible' : 'visible'}">
+		        Done
+		        </button>     
+		        <button class="cardDelete btn btn-light taskDelete">
+		        Delete
+		        </button>
+	        </div>
 	    </li>
-				`
+		`
+
 	return html;
 }
 

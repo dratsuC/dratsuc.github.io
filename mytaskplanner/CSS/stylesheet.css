@@ -1,6 +1,6 @@
 * {
 	margin: 0;
-	border: 0;
+	border: none;
 	color: #202020;
 }
 body {
@@ -57,31 +57,24 @@ header {
 	-webkit-filter: grayscale(0%);
 }
 
-.dashTitle {
-	padding-top: 1rem;
-}
 
 .dashStyle {
-	color: #BCC4DB;
+	padding: 2rem;
+	color: #C8C2AE;
 	text-shadow: 3px .5px 0px rgba(0,0,0,.6);
 }
 
-.dashLogo {
-	text-align: right;
-}
 #titleDiv {
 	margin: .6rem;
 }
 #date {
-	display: flex;
 	text-align: center;
-	padding: .6rem;
-	justify-content: center;
+	margin-bottom: 4rem;
 }
 #tasksHeading {
+	padding-top: 2rem;
 	font-size: 2.5rem;
-	color: #BCC4DB;
-	font-style: italic;
+	color: #C8C2AE;
 	text-align: center;
 	text-shadow: 3px .5px 0px rgba(0,0,0,.6);
 }
@@ -92,32 +85,25 @@ h3 {
 	color: white;
 }
 
-p {
-	text-align: center;
+.modal-body p {
+	color: white;
 }
 
 .welcomeCol {
 	margin-top: .2rem;
 }
 
-strong {
-	font-size: 1.20rem;
-}
 
-small {
-	font-size: 1rem;
-}
 footer {
+	background-color: rgba(1, 1, 1, 0.3);	
 	text-align: center;
-	padding: 2rem;
+	padding: .5rem;
+	margin: 1rem;
 }
 
-.footerText {
+footer p {
 	color: white;
 }
-
-
-
 
 
 /* //////////////////
@@ -125,34 +111,6 @@ footer {
 */ /////////////////
 
 
-
-/*TASK ADDING BUTTON*/
-#task-add {
-	font-size: 3rem;
-	opacity: 0.7px;
-	background-color: #4B88A2;	
-	transition: box-shadow 2s ease-in-out,
-	background-color .6s ease-in-out;
-
-}
-#task-add:hover {
-	box-shadow: 8px 6px #606060;
-	background-color: #4B88A2;
-}
-
-
-.btn {
-/*	box-shadow: 3px 3px #404040;*/
-	text-align: center;
-/*	margin-top: 3rem;*/
-	margin-bottom: auto;
-/*	background-color: #F0F4EF;*/
-	color: black;
-}
-.checkbox {
-	transition: box-shadow .6s;
-	padding: 1.6rem;
-}
 /*TOP-LEVEL OF MODAL*/
 .modal {
 	background: rgba(0, 0, 0, .6);
@@ -164,12 +122,11 @@ footer {
 /*  background: var(--background);*/
   box-shadow: .4rem .4rem 2.4rem .2rem rgba(
   	50, 50, 50, 0.3);
-  background: rgb(34,193,195);
-	background: #374A67
+	background: rgba(77, 80, 97, 0.95);
 }
 /*NEXT-LEVEL DOWN OF MODAL*/
 .modal-content {
-	border-radius: .75rem;
+	border-radius: .3rem;
 	min-width: 17rem;
 	width: 80%;
 	margin: 15% auto;
@@ -224,38 +181,67 @@ footer {
 	justify-content: space-around;
 }
 .modalButtons {
+	border: none;
 	font-size: 1.2rem;
 
 	text-align: center;
 	width: 7.9rem;
 	height: 3.14127rem;
-	box-shadow: 0 0 10px rgba(100,100,100,0.2);
-	transtion: box-shadow .4s ease-in-out;
 }	
-.modalButtons:hover {
-	box-shadow: 0 0 10px rgba(100,100,100,0.5);
 
-}
+
+/*SUBMIT BUTTON*/
 #addSubmit {
-
+	color: white;
+	background-color: #397f34;
+	box-shadow: 4px 4px black;
+	transition: all .4s
 }
-#addReset {
+#addSubmit:hover {
+	color: black;
+	opacity: 1;
+	box-shadow: 7px 7px black;
+	background-color: #FFC15E;
+}
 
+/*RESET BUTTON*/
+#addReset {
+	color: white;
+	background-color: #BB8588;
+	box-shadow: 4px 4px black;
+	transition: all .4s
+}
+#addReset:hover {
+	color: black;
+	opacity: 1;
+	box-shadow: 7px 7px black;
+	background-color: #a0203b;
 }
 /*EXIT BUTTON FOR MODAL*/
 .exit {
+	background-color: #BB8588;
+	border: none;
 	width: 40px;
 	height: 40px;
 	margin: .2rem;
 	border-radius: .5rem;
 	transform: rotate(0deg);
-	transition: transform, .4s;
+	transition: transform .4s,
+	background-color .4s, 
+	color .4s;
 }
 .exit:hover {
+	color: black;
 	transform: rotate(90deg);
+	background-color: #a0203b;
 }
-
-
+.exit > span {
+	color: white;
+	transition: all .4s;
+}
+.exit:hover > span {
+	color: black;
+}
 
 /* //////////////////
 	 /  Card Layout   /
@@ -265,17 +251,11 @@ footer {
 
 .card-div {
 	padding: 1rem;
-	border: 0.1rem solid #363636;
-	box-shadow: 3px 3px #353535;
-	border-radius: .75rem;
-	background-color: rgba(1, 1, 1, 0.4);
 }
 .card {
 
 	width: 80%;
 	max-width: 600px;
-	/*background-color: #F87575;*/
-
 	box-shadow: 3px 3px #1d1d1d;
 
 /*	min-width: 40%;
@@ -286,76 +266,96 @@ footer {
 	position: relative;
 /*	border: 1px solid #404040;*/
 }
-/*.taskComplete {
-	${(status === 'In progress') ? 'visible' : 'invisible'};
-}*/
 
-.invisible {
-	display: none;
-} 
+.card h5, div, strong, small {
+	color: white;
+}
 
-
-
+/*TASK CARD LIST*/
 
 #tasksList {
-
 	display: flex;
+	padding: 1rem;
 	flex-wrap: wrap;
-	justify-content: space-around;
+	justify-content: center;
+	background-color: rgba(1, 1, 1, 0.2);	
+	border-radius: .3rem;	
 }
 
 /*CARD BACKGROUND*/
 .card-layout {
-  background: #BCC4DB;	
-	background-color: #BCC4DB;
-	border-radius: 10px;
+	background-color: rgba(77, 80, 97, 0.8);
+	border-radius: .3rem;	
 }
 
 .card-text {
-	text-align: left;
-	border: 1px solid #202020;
-	border-radius: 10px;
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+.card-entry {
+	font-weight: bold;
 	padding: 1rem;
-	background-color: #F0F4EF;
+	text-align: center;
+}
+.card-entry > span{
+	color: white;
+	font-weight: normal;
 }
 
 .card-header {
-	border: 1px solid #202020;
-	border-radius: 20px;
-	background-color: #F0F4EF;
+	box-shadow: 3px 3px #1d1d1d;
+	background-color: rgba(77, 80, 97, .95)	
 }
 
-.area {
-	margin: 0.5rem;
+.cardButtons {
+	height: 4rem;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-around;
+}	
+
+.cardDone {
+	width: 7rem;
+	font-size: 1.3rem;
+	margin: 2rem;
+	border: none;
+	color: white;
+	background-color: #397f34;
+	box-shadow: 2px 2px black;
+	transition: all .4s
+}
+.cardDone:hover {
+	color: black;
+	opacity: 1;
+	box-shadow: 4px 4px black;
+	background-color: #FFC15E;
 }
 
-.socialMedia {
-	width: auto;
-	height: 3rem;
+.cardDelete {
+	width: 7rem;
+	font-size: 1.3rem;	
+	margin: 2rem;	
+	border: none;
+	color: white;
+	background-color: #BB8588;
+	box-shadow: 2px 2px black;
+	transition: all .4s
+}
+.cardDelete:hover {
+	color: black;
+	opacity: 1;
+	box-shadow: 4px 4px black;
+	background-color: #a0203b;
 }
 
-.socialSpan {
-	padding-top: 0;
-
-}
-
-.footerText {
-	padding: 0rem;
-	line-height: 0.5rem;
-}
-
-.copyrightFooter {
-	padding: 0;
-}
 
 .aboutUsButton {
-
-  border-radius: .5rem;
+  border-radius: .3rem;	
   border: none;
-  background-color: rgba(45,144,200,1);
+  background-color: rgba(77, 80, 97, 0.95);
   text-align: center;
   font-size: 1.1rem;
-  font-weight: bold;
   width: 11rem;
   transition: all 0.5s;
   cursor: pointer;
@@ -366,6 +366,7 @@ footer {
   cursor: pointer;
   display: inline-block;
   position: relative;
+	color: white;  
   transition: 0.5s;
 }
 
@@ -377,12 +378,45 @@ footer {
   right: -20px;
   transition: 0.5s;
 }
-
+.aboutUsButton:hover {
+	background-color: #FFC15E;
+}
 .aboutUsButton:hover span {
+	color: black;
   padding-right: 25px;
 }
 
 .aboutUsButton:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+
+/*TASK ADDING BUTTON*/
+
+#taskButtonP {
+	text-align: center;
+}
+
+
+
+
+#task-add {
+	border: none;
+	color: white;
+	font-size: 1rem;
+	opacity: 0.7;
+	box-shadow: 4px 4px black;
+	background-color: #16425B;	
+	transition: box-shadow .4s ease-in-out,
+	background-color .4s ease-in-out,
+	color .4s ease-in-out,
+	opacity .4s ease-in-out;
+
+}
+#task-add:hover {
+	color: black;
+	opacity: 1;
+	box-shadow: 7px 7px #16425B;
+	background-color: #FFC15E;
 }

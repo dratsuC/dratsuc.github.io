@@ -71,7 +71,7 @@
               +
             </button>
             <br>
-            <p>~ Press the '+' to add a task ~</p> 
+            <p id='taskButtonP'>~ Press the '+' to add a task ~</p> 
         </div>
         
 
@@ -136,7 +136,7 @@
                                 <div class="invalid-feedback">Please enter a valid date.</div>                                  
                             </div>  
                             <div class='modalButtonDiv'>
-                                <button id="addReset" type="button" class="btn btn-light modalButtons" data-dismiss="modal">Reset</button>
+                                <button id="addReset" type="button" class="btn btn-light modalButtons">Reset</button>
                                 <button id="addSubmit" type="submit" class="btn btn-light modalButtons" >Submit</button>                                 
                             </div>
                            
@@ -157,7 +157,7 @@
             <div class="modal-dialog" role="document">
               <div class="modal-content taskModal mx-auto">
                 <div class="modal-header">
-                  <h5 class="modal-title">About Us</h5>
+                  <h3 class="modal-title">About Us</h3>
                   <button type="button" class="exit btn btn-sm btn-light" data-dismiss="modal" aria-label="Close" >
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -172,16 +172,14 @@
 <!--                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d402586.85591509996!2d144.77227675530443!3d-37.972232617251784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad646b5d2ba4df7%3A0x4045675218ccd90!2sMelbourne%20VIC!5e0!3m2!1sen!2sau!4v1643605439296!5m2!1sen!2sau" width="600" height="450" style="border:0;"  style="height:200px;width:300px;" title="Iframe Example"></iframe> -->
                     </div>
                 </div>
-                <div class="modal-footer">
-
-                </div>
               </div>
             </div>
         </div>
 
  
-          
-   <!--Create card layout that represents a task card-->
+         <!-- -----------------------------
+        //      TASK CARD LAYOUT   //
+        -----------------------------  -->            
 
     <div class="card-div">
         <h2 id='tasksHeading'>Tasks</h2>
@@ -196,8 +194,8 @@
     <br>
     <!--Footer-->
     <footer class="bottom">
-        <p class='footerText'>©️Copyright 2021</p>
-        <p class='footerText'>City photo by Alex Azabache from Pexels</p>
+        <p><strong>©️Copyright 2021</strong></p>
+        <p><small>City photo by Alex Azabache from Pexels</small></p>
     </footer>
 
     <!-- linking local JS files -->
