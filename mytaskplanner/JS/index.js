@@ -2,7 +2,10 @@
 
 // object for storing tasks
 const taskManager = new TaskManager(0);
-
+if (!localStorage.getItem('username')) {
+	let userName = prompt('Please enter your name: ');
+	taskManager.saveUser(userName);
+}
 taskManager.load();
 taskManager.render();
 
@@ -14,7 +17,7 @@ taskManager.render();
 // defining current date, 
 // and appending it to '#date' HTML element
 
-const userName = prompt('Please enter your name: ')
+
 
 let d = new Date().toLocaleDateString('en-us', { 
 	weekday:"long", year:"numeric", month:"short", day:"numeric"});
@@ -23,6 +26,7 @@ let d = new Date().toLocaleDateString('en-us', {
 
 let displayDate = () => {
 	try {
+		let userName = localStorage.getItem('username')
 		let displayD = document.querySelector("#date");
 		displayD.innerHTML = `Welcome ${userName}! Today is ${d}.`;			
 	} catch(error) {
@@ -98,7 +102,7 @@ try {
 		addName.classList.add('is-invalid');
 		invalidCounter++
 	}
-	if (addDescription.value.length >= 5) {
+	if (addDescription.value.length >= 5 ) {
 		addDescription.classList.add('is-valid');
 		addDescription.classList.remove('is-invalid');
 	} else {
@@ -106,7 +110,7 @@ try {
 		addDescription.classList.add('is-invalid');
 		invalidCounter++
 	}
-	if (addAssignedTo.value.length >= 5) {
+	if (addAssignedTo.value.length >= 5 ) {
 		addAssignedTo.classList.add('is-valid');
 		addAssignedTo.classList.remove('is-invalid');
 	} else {
@@ -114,7 +118,7 @@ try {
 		addAssignedTo.classList.add('is-invalid');
 		invalidCounter++
 	}
-	if (addStatus.value) {
+	if (addStatus.value !== 'Pick an option ↴') {
 		addStatus.classList.add('is-valid');
 		addStatus.classList.remove('is-invalid');
 	} else {
@@ -203,8 +207,6 @@ try {
 
 // tasks list event listener
 let tasks_list = document.querySelector('#tasksList');
-console.log(tasks_list);
-console.log(tasks_list.childElement);
 
 tasks_list.addEventListener('click', (event) => {
 	if (event.target.classList.contains('taskComplete')) {
@@ -212,13 +214,14 @@ tasks_list.addEventListener('click', (event) => {
 		let taskId = Number(parentTask.dataset.taskId);
 		let task = taskManager.getTaskById(taskId);
 		task.status = 'Done';
-		console.log(task);
+		// console.log(task);
 		// event.target.classList.add('d-none')
-		console.log(event.target);
+		// console.log(event.target);
 		// event.target.style.color="red";
+		// ${(status === 'In progress') ? ('') : 'invisible'};
+		displayHidden()
 		taskManager.render();
 		taskManager.save();	
-
 	} 
 	if (event.target.classList.contains('taskDelete')) {
 		const parentTask = event.target.parentElement.parentElement.parentElement;
@@ -233,12 +236,17 @@ tasks_list.addEventListener('click', (event) => {
 
 
 // functions
-// function displayHidden() {
-// 	// document.querySelector('.taskComplete').style.backgroundColor = 'black';
-// 	let buttonTaskComplete = document.getElementById('.DoneBtn');
-// 	console.log(buttonTaskComplete);
-// 	buttonTaskComplete.style.color = "red";
-	
+function displayHidden() {
+	// document.querySelector('.taskComplete').style.backgroundColor = 'black';
+	let x = document.querySelector(".taskComplete");
+	// console.log(x)
+	if (x.style.display === "none") {
+	x.style.display = "block";
+	} else {
+	x.style.display = "none";
+	}
+
+}
 
 // console.log(tasks_list);
 

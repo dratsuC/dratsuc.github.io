@@ -5,8 +5,8 @@ let createTaskHtml = (
 	) => {
 
 	const html = `
-	    <li class="card layout
-" data-task-id="${id}">
+	    <li class="card card-layout" 
+	    data-task-id="${id}">
 	        <div class="card-header rounded">
 
 	        <h5>Task Name: <small>${name}</small></h5> 
@@ -20,13 +20,15 @@ let createTaskHtml = (
 	            Due Date: ${dueDate}<br>
 	            Status: ${status}<br>                
 	        </p>
+
 	        <label for="yes">  
-	        <a class="btn btn-light area taskComplete">
+	        <button class="card-button taskComplete ${(status === 'Done')
+	         ? 'invisible' : 'visible'}">
 	        Done
-	        </a>     
-	        <a class="btn btn-light area taskDelete">
+	        </button>     
+	        <button class=" card-button taskDelete">
 	        Delete
-	        </a>
+	        </button>
 	    </li>
 				`
 	return html;
@@ -67,6 +69,12 @@ class TaskManager {
 		for(let i = 0; i < this.tasks.length; i++) {
 			let task = this.tasks[i];
 			let date = new Date(task.dueDate);
+			let doneCounter = 0;
+			// checking for tasks which are done
+			// console.log(task)
+			// if (task.status === 'Done') {
+			// 	doneCounter++
+			// }
 
 			let formattedDate = 
 				`${date.getDate()}/${(date.getMonth() + 1)}/${date.getFullYear()}`;
@@ -79,23 +87,34 @@ class TaskManager {
 				formattedDate
 				);
 			// console.log(task);
+
 			tasksHtmlList.push(taskHtml);
 			// console.log(tasksHtmlList);
 		}
+
 		let tasksHtml = tasksHtmlList.join('\n');
 
 		let tasksList = document.querySelector('#tasksList');
 		tasksList.innerHTML = tasksHtml;
 	}
+	saveUser(userName) {
+		// saving username to localstorage
+		let userJson = userName;
+		localStorage.setItem('username', userJson);	
+	}
+
 	save() {
 		let tasksJson = JSON.stringify(this.tasks);
-		console.log(tasksJson);
+		// console.log(tasksJson);
 		localStorage.setItem('tasks', tasksJson);
 		let currentId = String(this.currentId);
-		console.log(currentId);
+		// console.log(currentId);
 		localStorage.setItem('currentId', currentId);
 	}
 	load() {
+		if(localStorage.getItem('username')) {
+			let username = localStorage.getItem('username');
+		}		
 		if (localStorage.getItem('tasks')) {
 			let tasksJson = localStorage.getItem('tasks');
 			this.tasks = JSON.parse(tasksJson);
