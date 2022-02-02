@@ -62,7 +62,7 @@ header {
 }
 
 .dashStyle {
-	color: rgba(45,144,200,1);
+	color: #BCC4DB;
 	text-shadow: 3px .5px 0px rgba(0,0,0,.6);
 }
 
@@ -80,13 +80,16 @@ header {
 }
 #tasksHeading {
 	font-size: 2.5rem;
-	color: rgba(45,144,200,1);
+	color: #BCC4DB;
 	font-style: italic;
 	text-align: center;
 	text-shadow: 3px .5px 0px rgba(0,0,0,.6);
 }
 h1 {
 	font-size: 3.5rem;
+}
+h3 {
+	color: white;
 }
 
 p {
@@ -159,9 +162,10 @@ footer {
 .taskModal {
 /*	background-color: var(--light);*/
 /*  background: var(--background);*/
-  box-shadow: .4rem .4rem 2.4rem .2rem rgba(50, 50, 50, 0.3);
+  box-shadow: .4rem .4rem 2.4rem .2rem rgba(
+  	50, 50, 50, 0.3);
   background: rgb(34,193,195);
-	background: linear-gradient(0deg, rgba(45,144,200,1) 0%, rgba(45,144,200,1) 100%);
+	background: #374A67
 }
 /*NEXT-LEVEL DOWN OF MODAL*/
 .modal-content {
@@ -172,6 +176,7 @@ footer {
 }
 /*HEADER OF MODAL*/
 .modal-header {
+	border: none;
 /*	background-color: ;*/
 	align-items: center;
 }
@@ -301,8 +306,8 @@ footer {
 
 /*CARD BACKGROUND*/
 .card-layout {
-  background: rgba(45,144,200,0.9);	
-	background-color: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(45,144,200,1) 100%);
+  background: #BCC4DB;	
+	background-color: #BCC4DB;
 	border-radius: 10px;
 }
 
@@ -320,17 +325,9 @@ footer {
 	background-color: #F0F4EF;
 }
 
-#invisible {
-	display: none;
-}
-
 .area {
 	margin: 0.5rem;
 }
-
-
-
-
 
 .socialMedia {
 	width: auto;
@@ -357,9 +354,9 @@ footer {
   border: none;
   background-color: rgba(45,144,200,1);
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  width: 10rem;
+  width: 11rem;
   transition: all 0.5s;
   cursor: pointer;
   margin: .3rem;
