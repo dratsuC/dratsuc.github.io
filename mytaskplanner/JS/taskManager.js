@@ -133,7 +133,7 @@ class TaskManager {
 			const task = this.tasks[i];
 			if(task.id != taskId) {
 				newTasks.push(task);
-				this.currentId--;
+				
 			}
 		}
 		this.tasks = newTasks;

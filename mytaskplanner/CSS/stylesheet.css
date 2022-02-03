@@ -1,3 +1,20 @@
+/*///////////////////////////*/
+/*TABLE OF *rough* CONTENTS */
+/*////////////////////////////
+
+- main selectors (*, body)
+- header styling (main heading, 
+- username + date, social icons)
+- footer styling
+- modal + modal button styling
+- card styling
+- card buttons (done, delete)
+- add task button
+- about us button
+
+///////////////////////*/
+
+
 * {
 	margin: 0;
 	border: none;
@@ -46,24 +63,34 @@ header {
 		left: 0%;
 	}
 }
+
+/*//////////////////////////////*/
+/*SOCIAL MEDIA ICON STYLING*/
+/*//////////////////////////////*/
 .socialSpan img{
 	width: 2.3rem;
 	height: 2.3rem;
-	-webkit-filter: grayscale(100%);
+	-webkit-filter: grayscale(0%);
 	transition: -webkit-filter .4s ease-in-out;
     
 }
 .socialSpan img:hover {
-	-webkit-filter: grayscale(0%);
+	-webkit-filter: grayscale(100%);
 }
 
-
+/*//////////////////////////////*/
+/*COLOUR OF MAIN HEADING*/
+/*//////////////////////////////*/
 .dashStyle {
 	padding: 2rem;
-	color: #C8C2AE;
-	text-shadow: 3px .5px 0px rgba(0,0,0,.6);
+	color: #F0B238;
+	opacity: .7;
+	text-shadow: 3px .5px 0px rgba(0,0,0,1);
 }
 
+/*//////////////////////////////*/
+/*STYLING OF HEADER TEXT*/
+/*//////////////////////////////*/
 .welcomeDiv {
 	display: inline-flex;
 	color: black;
@@ -72,7 +99,7 @@ header {
 	padding-right: 2rem;
 }
 #userName {
-	color: #C8C2AE;
+	color: #FFC15E;
 	font-weight: 700;
 	font-size: 1.1rem;
 }
@@ -84,10 +111,15 @@ header {
 	text-align: center;
 	margin-bottom: 4rem;
 }
+
+
+/*//////////////////////////////*/
+/*COLOR OF 'TASKS' HEADING*/
+/*//////////////////////////////*/
 #tasksHeading {
 	padding-top: 2rem;
 	font-size: 2.5rem;
-	color: #C8C2AE;
+	color: #9E90A2;
 	text-align: center;
 	text-shadow: 3px .5px 0px rgba(0,0,0,.6);
 }
@@ -135,7 +167,11 @@ footer p {
 /*  background: var(--background);*/
   box-shadow: .4rem .4rem 2.4rem .2rem rgba(
   	50, 50, 50, 0.3);
+
+  /*///////////////////////////////*/
+	/* BACKGROUND COLOUR FOR TASK MODAL*/
 	background: rgba(77, 80, 97, 0.95);
+	/*//////////////////////////////*/
 }
 /*NEXT-LEVEL DOWN OF MODAL*/
 .modal-content {
@@ -186,7 +222,11 @@ footer p {
 	color: white;
 	border-radius: .3rem;
 }
+
+
+/*///////////////////////////////*/
 /*SUBMIT/RESET BUTTON CLASS*/
+/*//////////////////////////////*/
 .modalButtonDiv {	
 	width: 100%;
 	height: 4rem;
@@ -256,6 +296,9 @@ footer p {
 	color: black;
 }
 
+
+
+
 /* //////////////////
 	 /  Card Layout   /
 */ /////////////////
@@ -266,7 +309,7 @@ footer p {
 	padding: 1rem;
 }
 .card {
-
+	max-height: 33rem;
 	width: 80%;
 	max-width: 600px;
 	box-shadow: 3px 3px #1d1d1d;
@@ -286,8 +329,10 @@ footer p {
 
 /*TASK CARD LIST*/
 
+
 #tasksList {
 	display: flex;
+	min-height: 50rem;
 	padding: 1rem;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -297,10 +342,15 @@ footer p {
 
 /*CARD BACKGROUND*/
 .card-layout {
-	background-color: rgba(77, 80, 97, 0.8);
+	/*///////////////////////////////*/
+	/*BACKGROUND COLOUR FOR TASK CARDS*/
+	background-color: rgba(8, 72, 135, 0.6);
+	/*///////////////////////////////*/
 	border-radius: .3rem;	
 }
-
+/*.card-body {
+	height: 20%;
+}*/
 .card-text {
 	display: flex;
 	justify-content: space-around;
@@ -318,11 +368,11 @@ footer p {
 
 .card-header {
 	box-shadow: 3px 3px #1d1d1d;
-	background-color: rgba(77, 80, 97, .95)	
+	background-color: rgba(158, 144, 162, .4)	
 }
 
 .cardButtons {
-	height: 4rem;
+	height: 5rem;
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-around;
@@ -362,11 +412,14 @@ footer p {
 	background-color: #a0203b;
 }
 
+/*//////////////////////////////*/
+/*ABOUT US BUTTON STYLING*/
+/*//////////////////////////////*/
 
 .aboutUsButton {
   border-radius: .3rem;	
   border: none;
-  background-color: rgba(77, 80, 97, 0.95);
+  background-color: rgba(158, 144, 162, 0.95);
   text-align: center;
   font-size: 1.1rem;
   width: 11rem;
@@ -412,7 +465,9 @@ footer p {
 }
 
 
-
+/*//////////////////////////////*/
+/*STYLING FOR ADD TASK BUTTON*/
+/*//////////////////////////////*/
 
 #task-add {
 	border: none;
@@ -420,7 +475,7 @@ footer p {
 	font-size: 1rem;
 	opacity: 0.7;
 	box-shadow: 4px 4px black;
-	background-color: #16425B;	
+	background-color: #9E90A2;	
 	transition: box-shadow .4s ease-in-out,
 	background-color .4s ease-in-out,
 	color .4s ease-in-out,
