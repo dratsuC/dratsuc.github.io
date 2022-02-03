@@ -28,7 +28,10 @@ let displayDate = () => {
 	try {
 		let userName = localStorage.getItem('username')
 		let displayD = document.querySelector("#date");
-		displayD.innerHTML = `Welcome ${userName}! Today is ${d}.`;			
+		displayD.innerHTML = `
+		<div class="welcomeDiv">Welcome <strong id="userName">${userName}</strong>! </div>
+		<div class="welcomeDiv">Today is ${d}.</div>
+		`;			
 	} catch(error) {
 		console.log('Uh oh, something went oopsie!')
 		console.log(error)

@@ -64,6 +64,15 @@ header {
 	text-shadow: 3px .5px 0px rgba(0,0,0,.6);
 }
 
+.welcomeDiv {
+	display: inline-flex;
+	color: black;
+}
+#userName {
+	color: ;
+	font-weight: bold;
+}
+
 #titleDiv {
 	margin: .6rem;
 }
