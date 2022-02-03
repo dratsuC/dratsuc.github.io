@@ -1,15 +1,18 @@
 # THE ULTIMATE TO-DO LIST, COMING AT YOU LIVE
 
-
+Current colour pallette:
+- #FFC15E - yellow
+- #16425B - deep blue
+- #C8C2AE - bone
+- #4D5061 - grey
+- #BB8588 - #a0203b - reds
+- #397f34 - green
 
 To-Do List to-do list:
 
-- Continue ticking off tasks
+- fix incrementing of local storage ID after deleting tasks
 
-- Add an interesting API for cool points
+- dismiss modal when submit button is pressed
 
-- Add proper accessibility options for HTML file
+- add info about each group member in about us page
 
-- Refine button animations in CSS (done button, delete button, etc.)
-
-- Add a hidden button which slowly shows a thank you message on the screen for the presentation
