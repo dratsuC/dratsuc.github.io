@@ -67,10 +67,14 @@ header {
 .welcomeDiv {
 	display: inline-flex;
 	color: black;
+	justify-content: space-around;
+	padding-left: 2rem;	
+	padding-right: 2rem;
 }
 #userName {
-	color: ;
-	font-weight: bold;
+	color: #C8C2AE;
+	font-weight: 700;
+	font-size: 1.1rem;
 }
 
 #titleDiv {
@@ -429,3 +433,9 @@ footer p {
 	box-shadow: 7px 7px #16425B;
 	background-color: #FFC15E;
 }
+
+
+
+
+
+
