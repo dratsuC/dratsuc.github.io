@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <!--Stylesheet CSS-->
+    <link rel="stylesheet" href="CSS/stylesheet.css"/>
+    
+    <title>To-Do List</title>
+    <style>
+    body {
+      background-image: url('./Images/greyscale_city.png');
+      }
+    </style>
+  </head>
+  <body>
+    
+    <!--Dashboard-->
+
+    <div class="container-fluid navContainer">
+        <div class="row navRow">
+            <div class="col socialDiv">
+                        <!--Instagram-->
+                <div class='socialMediaTop'>
+                <span class='socialSpan'><a href='https://www.instagram.com/'><img class='socialMedia' src='./Images/Instagram.png' alt='Instagram link'/></a></span>
+                <!--Youtube-->
+                <span class='socialSpan'><a href='https://www.youtube.com/'><img class='socialMedia' src='./Images/youtube.png' alt='YouTube link'/></a></span>
+                <!--Twitter-->
+                <span class='socialSpan'><a href='https://twitter.com/?lang=en-au'><img class='socialMedia' src='./Images/twitter.png' alt='Twitter link'/></a></span>
+                <!--Pinterest-->
+                <span class='socialSpan'><a href='https://www.pinterest.com.au/'><img class='socialMedia' src='./Images/pinterest.png' alt='Pinterest link'/></a></span>
+                </div>                 
+            </div>
+
+            <div class="col aboutUsDiv">
+                <button type="button" class="aboutUsButton btn  btn-light" data-toggle="modal" data-target="#aboutUsModal">
+                      <span>More About Us</span>
+                </button>                 
+            </div>
+
+
+              
+        </div>
+    </div>
+    
+
+    
+          <header>
+       
+      <div class="row">
+       
+
+        <div class="col welcomeCol">
+              <span id="date" ></span>
+        </div>
+      </div>
+      <h1 class='dashStyle'>To-Do List</h1>
+    </header>
+
+    <main>
+        
+        <!-- Task adding button -->
+        <div class="w-50 mx-auto">
+                    <!-- Task adding button -->
+            <button type="button" id='task-add' class="button btn btn-lg btn-block btn-light" data-toggle="modal" data-target="#taskModal">
+              +
+            </button>
+            <br>
+            <p id='taskButtonP'>~ Press the '+' to add a task ~</p> 
+        </div>
+        
+
+        <!-- -----------------------------
+        //      NEW TASK FORM MODAL    //
+        -----------------------------  -->
+        <div class="modal fade" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="Task Adding Modal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content taskModal mx-auto">
+                <div class="modal-header">
+                  <h3 class="modal-title">Add a Task</h3>
+                  <button type="button" class="exit btn btn-sm btn-light" data-dismiss="modal" aria-label="Close" >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                      <form id="addTask" class="needs-validation">
+                          <div class="container">
+                            <div class="form-group p-2">
+                                <label class="modal-label" for="Name">Task Name: </label><br>
+                                <input type="textbox" id="addName" class="form-control" placeholder="Name of task"/>
+                                <!-- name validation feedback -->
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Please enter a task name (of at least 5 characters.)</div>
+
+                            </div>
+                            <div class="form-group p-2">
+                                <label class="modal-label" for="Description">Description: </label> <br>
+                                <textarea  id="addDescription" class="form-control" name="Description" placeholder="Describe your task" rows="5" cols="20"></textarea>
+                                <!-- description validation feedback -->
+                                <div class="valid-feedback">Looks good!</div>
+                                <div class="invalid-feedback">Please describe your task (in more than 5 characters)</div>
+
+                            </div>  
+                            <div class="form-group p-2">
+                                <label class="modal-label" for="assignedTo">Assigned To: </label><br>
+                                <input  type="textbox" id="addAssignedTo" class="form-control" placeholder="Enter your name"/>
+                                <!-- assigned to validation feedback -->
+                                <div class="valid-feedback">What a lovely name!</div>
+                                <div class="invalid-feedback">Please enter the task asignee's name.</div>
+
+                            </div>    
+                            <div class="form-group p-2">
+                                <label class="modal-label" for="Status">Status: </label><br>
+                                <select  placeholder="TEST" id="addStatus" class="form-control" name="Status">
+                                    <option>Pick an option ↴</option>
+                                    <option>To-do</option>
+                                    <option>In progress</option>
+                                    <option>Review</option>
+                                </select>
+                                <br>
+                                <!-- status validation feedback -->
+                                <div class="valid-feedback">Good choice!</div>
+                                <div class="invalid-feedback">Please pick a task status.</div>                                
+                            </div>
+
+                            <div class="form-group p-2">
+                                <label class="modal-label" for="addDate">Due Date: </label><br>
+                                <input  type="date" id="addDate" class="form-control" name="date">
+                                <!-- date validation feedback -->
+                                <div class="valid-feedback">Nice date!</div>
+                                <div class="invalid-feedback">Please enter a valid date.</div>                                  
+                            </div>  
+                            <div class='modalButtonDiv'>
+                                <button id="addReset" type="button" class="btn btn-light modalButtons">Reset</button>
+                                <button id="addSubmit" type="submit" class="btn btn-light modalButtons" >Submit</button>                                 
+                            </div>
+                           
+                          </div>
+                        
+                        </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+         <!-- -----------------------------
+        //      About us MODAL   //
+        -----------------------------  -->         
+       <div class="modal fade" id="aboutUsModal" tabindex="-1" role="dialog" aria-labelledby="Task Adding Modal" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content taskModal mx-auto">
+                <div class="modal-header">
+                  <h3 class="modal-title">About Us</h3>
+                  <button type="button" class="exit btn btn-sm btn-light" data-dismiss="modal" aria-label="Close" >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                    <div class="card-body">
+                    <p class="card-text">
+                       This website was designed, programmed and tested as part of our final project, under instruction from Generation Australia.             
+                    </p>
+                    <p class="card-text">
+                       In order to create this website, work was undergone remotely from all different parts of Australia.          
+                    </p>  
+                    <p>Team Members:</p>
+                    <ol>
+                        <li class="text-light"><a class="text-light" href="https://www.linkedin.com/in/tasha-bailey-3a3218228/
+">Tasha Bailey 🔗</a></li>
+                        <li class="text-light"><a class="text-light" href="https://www.linkedin.com/in/le-luu-1b51a4227/
+">Le Luu 🔗</a></li>
+                        <li class="text-light"><a class="text-light" href="www.linkedin.com/in/kaiden-haysom-webdev">Kaiden Haysom 🔗</a></li>
+                    </ol>                  
+                    <!-- IFRAME FOR GOOGLE MAPS EMBED -->
+
+<!--                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d402586.85591509996!2d144.77227675530443!3d-37.972232617251784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad646b5d2ba4df7%3A0x4045675218ccd90!2sMelbourne%20VIC!5e0!3m2!1sen!2sau!4v1643605439296!5m2!1sen!2sau" width="600" height="450" style="border:0;"  style="height:200px;width:300px;" title="Iframe Example"></iframe> -->
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+
+ 
+         <!-- -----------------------------
+        //      TASK CARD LAYOUT   //
+        -----------------------------  -->            
+
+    <div class="card-div">
+        <h2 id='tasksHeading'>Tasks</h2>
+        <ul id='tasksList'>
+            <li class="card card-layout" 
+            data-task-id="${id}">
+                <div class="card-header rounded">
+
+                <h5>Task Name: <small>${name}</small></h5> 
+                </div>
+                <div class="card-body">
+                <div class="card-text">
+                    <div class="card-entry">Assigned to: <span></span></div>
+                    <div class="card-entry">Due Date: <span></span></div>
+                    <div class="card-entry">Status: <span></span></div>               
+                </div>
+                <h5 class="card-title">
+                    <strong>Description: </strong> <small></small>
+                </h5>    
+                <div class='cardButtons'>
+                    <button class=" cardDone btn btn-light taskComplete ">
+                    Done
+                    </button>     
+                    <button class="cardDelete btn btn-light taskDelete">
+                    Delete
+                    </button>
+                </div>
+            </li>            
+
+        </ul>
+    </div>
+
+    </main>
+
+    <br>
+    <!--Footer-->
+    <footer class="bottom">
+        <p><strong>©️Copyright 2021</strong></p>
+        <p><small>City photo by Alex Azabache from Pexels</small></p>
+    </footer>
+
+    <!-- linking local JS files -->
+    <script src='./JS/taskManager.js' type='text/javascript'></script>
+    <script src='./JS/index.js' type='text/javascript'></script>
+    <noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+    <!-- linking other JS files -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
