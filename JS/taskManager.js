@@ -25,10 +25,10 @@ let createTaskHtml = (
 	        <div class='cardButtons'>
 		        <button class=" cardDone btn btn-light taskComplete ${(status === 'Done')
 		         ? 'invisible' : 'visible'}">
-		        Done
+		        Done ✓
 		        </button>     
 		        <button class="cardDelete btn btn-light taskDelete">
-		        Delete
+		        Delete 🗑
 		        </button>
 	        </div>
 	    </li>
